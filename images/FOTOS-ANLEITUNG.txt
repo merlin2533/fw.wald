@@ -1,0 +1,37 @@
+ANLEITUNG: Echte Fotos einbinden
+=================================
+
+Die Website ist vorbereitet fuer echte Fotos eurer Fahrzeuge.
+So geht's:
+
+1. FAHRZEUGFOTOS
+   Legt die Fotos im JPG-Format in den Ordner: images/fahrzeuge/
+
+   Empfohlene Dateinamen:
+   - elw1.jpg     (ELW 1 - Einsatzleitwagen)
+   - gwt2.jpg     (GW-T 2 - Geraetewagen Transport)
+   - hlf.jpg      (HLF 16/12)
+   - lf20.jpg     (LF 20)
+   - mtw.jpg      (MTW - Mannschaftstransportwagen)
+   - lf16ts.jpg   (LF 16-TS - ehemaliges Fahrzeug)
+
+   Empfohlene Bildgroesse: mindestens 800x500 Pixel, Querformat.
+
+2. IN DER HTML-DATEI (fahrzeuge.html)
+   Bei jedem Fahrzeug steht ein HTML-Kommentar mit dem fertigen img-Tag:
+   <!-- Foto ersetzen: <img src="images/fahrzeuge/elw1.jpg" ...> -->
+
+   Einfach den Kommentar entfernen und das <div class="vehicle-card__photo-placeholder ...">
+   durch den img-Tag ersetzen.
+
+3. HERO-BILD (Startseite)
+   Fuer das grosse Bild auf der Startseite (index.html):
+   - Legt ein Foto als images/hero-feuerwehr.jpg ab (mind. 1600x900px)
+   - In index.html die Zeile mit hero__photo-placeholder ersetzen durch:
+     <div class="hero__bg" style="background-image: url('images/hero-feuerwehr.jpg');"></div>
+
+Tipps:
+- Fotos im Querformat (Landscape) funktionieren am besten
+- Bilder mit mind. 1200px Breite fuer scharfe Darstellung
+- JPG-Komprimierung auf ca. 80% fuer schnelle Ladezeiten
+- Dateigroesse pro Bild idealerweise unter 500KB
