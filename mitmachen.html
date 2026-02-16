@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mitmachen bei der Freiwilligen Feuerwehr Walddorfhäslach - Einsatzabteilung, Jugendfeuerwehr, Spielmannszug oder Förderverein. Jetzt engagieren!">
+  <meta name="keywords" content="Feuerwehr, Walddorfhäslach, Mitmachen, Ehrenamt, Jugendfeuerwehr, Spielmannszug, Förderverein, Freiwillige Feuerwehr">
+  <meta property="og:title" content="Mitmachen - Freiwillige Feuerwehr Walddorfhäslach">
+  <meta property="og:description" content="Werde Teil unseres Teams! Engagiere dich ehrenamtlich in der Einsatzabteilung, Jugendfeuerwehr, im Spielmannszug oder Förderverein.">
+  <meta property="og:type" content="website">
+  <title>Mitmachen - Freiwillige Feuerwehr Walddorfhäslach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <!-- Notfall-Leiste -->
+  <div class="emergency-bar">
+    <div class="container">
+      Notruf: <a href="tel:112">112</a> &nbsp;|&nbsp; Polizei: <a href="tel:110">110</a> &nbsp;|&nbsp; Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#C8102E"/>
+          <path d="M24 8L28 18H36L30 24L32 34L24 28L16 34L18 24L12 18H20L24 8Z" fill="white"/>
+        </svg>
+        <div class="header__logo-text">
+          <span class="header__logo-title">FF Walddorfhäslach</span>
+          <span class="header__logo-subtitle">Freiwillige Feuerwehr</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="nav-close" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" class="nav__link">Startseite</a>
+        <a href="ueber-uns.html" class="nav__link">Über uns</a>
+        <a href="fahrzeuge.html" class="nav__link">Fahrzeuge</a>
+        <a href="einsaetze.html" class="nav__link">Einsätze</a>
+        <a href="jugendfeuerwehr.html" class="nav__link">Jugend</a>
+        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="mitmachen.html" class="nav__link nav__link--cta nav__link--active">Mitmachen</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span>/</span>
+        <span class="current">Mitmachen</span>
+      </div>
+      <h1>Mitmachen</h1>
+      <p>Werde Teil unserer Gemeinschaft und engagiere dich ehrenamtlich für die Sicherheit in Walddorfhäslach.</p>
+    </div>
+  </section>
+
+  <!-- Hero / Warum Mitmachen -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Warum Feuerwehr?</h2>
+        <p>Es gibt viele gute Gründe, sich bei der Freiwilligen Feuerwehr zu engagieren</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light);">
+          Die Freiwillige Feuerwehr ist mehr als nur ein Ehrenamt -- sie ist eine Lebenseinstellung.
+          Bei uns findest du echte Kameradschaft, lernst fürs Leben und hilfst deinen Mitmenschen
+          in Notsituationen. Egal ob jung oder erfahren, ob aktiv im Einsatz oder unterstützend
+          im Hintergrund -- bei uns ist jeder willkommen, der anpacken möchte.
+        </p>
+      </div>
+
+      <div class="grid grid--4 mt-2xl">
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="feature-card__title">Gemeinschaft</h3>
+          <p class="feature-card__text">Echte Kameradschaft und Zusammenhalt -- bei der Feuerwehr findest du Freunde fürs Leben.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Ausbildung</h3>
+          <p class="feature-card__text">Kostenlose Lehrgänge und Weiterbildungen in Erster Hilfe, Brandschutz, Technik und Führung.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <h3 class="feature-card__title">Fitness</h3>
+          <p class="feature-card__text">Regelmäßiges Training und körperliche Herausforderungen halten dich fit und gesund.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Sinn</h3>
+          <p class="feature-card__text">Menschen in Not helfen und einen echten Beitrag für die Sicherheit der Gemeinde leisten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Möglichkeiten -->
+  <section class="section section--alt" id="moeglichkeiten">
+    <div class="container">
+      <div class="section__header">
+        <h2>Deine Möglichkeiten</h2>
+        <p>Ob aktiv im Einsatz, musikalisch im Spielmannszug oder als Fördermitglied -- finde deinen Platz</p>
+      </div>
+
+      <div class="grid grid--2">
+
+        <!-- Einsatzabteilung -->
+        <div class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #C8102E 0%, #9B0B22 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Ab 17 Jahre</span>
+            <h3 class="card__title">Einsatzabteilung</h3>
+            <p class="card__text">
+              Das Herzstück unserer Feuerwehr. Als aktives Mitglied der Einsatzabteilung bist du bei
+              Bränden, Unfällen und technischen Hilfeleistungen direkt vor Ort. Du erhältst eine
+              fundierte Grundausbildung und kannst dich in zahlreichen Lehrgängen weiterbilden --
+              von der Atemschutzgeräteträgerin bis zum Maschinisten.
+            </p>
+            <p class="card__text">
+              <strong>Voraussetzungen:</strong> Mindestalter 17 Jahre, gesundheitliche Eignung, Bereitschaft zu regelmäßigen Übungen und Einsätzen.
+            </p>
+            <a href="#kontakt-formular" class="btn btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              Jetzt bewerben
+            </a>
+          </div>
+        </div>
+
+        <!-- Jugendfeuerwehr -->
+        <div class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">10 - 17 Jahre</span>
+            <h3 class="card__title">Jugendfeuerwehr</h3>
+            <p class="card__text">
+              Der perfekte Einstieg in die Feuerwehrwelt! In der Jugendfeuerwehr lernst du spielerisch
+              den Umgang mit Feuerwehrtechnik, Teamarbeit und Erste Hilfe. Neben den fachlichen
+              Übungen stehen Zeltlager, Ausflüge und gemeinsame Aktionen auf dem Programm.
+            </p>
+            <p class="card__text">
+              <strong>Voraussetzungen:</strong> Alter zwischen 10 und 17 Jahren, Einverständnis der Erziehungsberechtigten, Spaß an Teamarbeit.
+            </p>
+            <a href="jugendfeuerwehr.html" class="btn btn--outline-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              Mehr zur Jugendfeuerwehr
+            </a>
+          </div>
+        </div>
+
+        <!-- Spielmannszug -->
+        <div class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Alle Altersgruppen</span>
+            <h3 class="card__title">Spielmannszug</h3>
+            <p class="card__text">
+              Seit 1967 bereichert der Spielmannszug Häslach das kulturelle Leben der Gemeinde.
+              Ob Querflöte, Trommel oder Lyra -- bei uns kannst du ein Instrument lernen oder
+              deine vorhandenen Fähigkeiten einbringen. Wir treten bei Festen, Umzügen und
+              Veranstaltungen in der Region auf.
+            </p>
+            <p class="card__text">
+              <strong>Voraussetzungen:</strong> Keine musikalischen Vorkenntnisse nötig -- wir bilden aus! Regelmäßige Teilnahme an Proben.
+            </p>
+            <a href="#kontakt-formular" class="btn btn--outline-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              Interesse bekunden
+            </a>
+          </div>
+        </div>
+
+        <!-- Förderverein / Passive Mitgliedschaft -->
+        <div class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Unterstützung</span>
+            <h3 class="card__title">Förderverein / Passive Mitgliedschaft</h3>
+            <p class="card__text">
+              Nicht jeder kann aktiv im Einsatz sein -- aber jeder kann die Feuerwehr unterstützen!
+              Als passives Mitglied oder Fördermitglied unterstützt du unsere Arbeit finanziell und
+              ideell. Dein Beitrag hilft uns bei der Anschaffung von Ausrüstung, der Jugendarbeit
+              und der Organisation von Veranstaltungen.
+            </p>
+            <p class="card__text">
+              <strong>Jahresbeitrag:</strong> Bereits ab einem kleinen Beitrag kannst du Fördermitglied werden und unsere Arbeit nachhaltig unterstützen.
+            </p>
+            <a href="#kontakt-formular" class="btn btn--outline-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              Fördermitglied werden
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf / So geht's -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>So wirst du Mitglied</h2>
+        <p>In wenigen Schritten bist du Teil unseres Teams</p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="feature-card__title">1. Kontakt aufnehmen</h3>
+          <p class="feature-card__text">Schreib uns eine Nachricht, ruf an oder komm einfach bei einer Übung vorbei.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="feature-card__title">2. Reinschnuppern</h3>
+          <p class="feature-card__text">Besuche einige Übungsabende unverbindlich und lerne uns und unsere Arbeit kennen.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="feature-card__title">3. Aufnahmeantrag</h3>
+          <p class="feature-card__text">Fülle den Aufnahmeantrag aus. Bei Minderjährigen brauchen wir die Unterschrift der Eltern.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="feature-card__title">4. Willkommen!</h3>
+          <p class="feature-card__text">Nach der Aufnahme startest du mit der Grundausbildung und bist Teil unseres Teams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__header">
+        <h2>Häufig gestellte Fragen</h2>
+        <p>Antworten auf die wichtigsten Fragen rund um das Mitmachen bei der Feuerwehr</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Welche Voraussetzungen muss ich erfüllen?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Für die Einsatzabteilung musst du mindestens 17 Jahre alt sein und eine gesundheitliche Eignung
+              mitbringen (wird durch eine ärztliche Untersuchung festgestellt). Eine Grundausbildung erhältst du
+              bei uns -- Vorkenntnisse sind nicht erforderlich. Wichtig sind Teamfähigkeit, Zuverlässigkeit und
+              die Bereitschaft, regelmäßig an Übungen und Einsätzen teilzunehmen.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Wie viel Zeit muss ich investieren?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Die regelmäßigen Übungen finden in der Regel alle zwei Wochen statt und dauern etwa
+              zwei Stunden. Dazu kommen gelegentliche Lehrgänge und natürlich die Einsätze, die nicht
+              planbar sind. Insgesamt solltest du mit etwa 10-15 Stunden pro Monat rechnen. Natürlich
+              verstehen wir, dass Familie und Beruf Vorrang haben -- die Dienstgestaltung ist flexibel.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Entstehen mir Kosten?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Nein! Die Mitgliedschaft in der Freiwilligen Feuerwehr ist kostenlos. Deine komplette
+              persönliche Schutzausrüstung wird von der Gemeinde gestellt. Auch alle Lehrgänge und
+              Ausbildungen sind für dich kostenfrei. Im Gegenteil: Bei Einsätzen während der Arbeitszeit
+              wird dein Arbeitgeber von der Gemeinde entschädigt.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Brauche ich Vorkenntnisse?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Nein, du brauchst keine Vorkenntnisse. Alles, was du wissen musst, lernst du in der
+              Grundausbildung bei uns vor Ort und in Lehrgängen an der Landesfeuerwehrschule in
+              Bruchsal. Ob Erste Hilfe, Brandbekämpfung oder technische Hilfeleistung -- wir bilden
+              dich umfassend aus.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Bin ich bei Einsätzen versichert?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Ja, selbstverständlich. Als Mitglied der Freiwilligen Feuerwehr bist du bei Einsätzen,
+              Übungen und Veranstaltungen über die Unfallkasse Baden-Württemberg versichert. Das
+              umfasst sowohl Unfälle als auch den Weg zum Feuerwehrhaus und zurück.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Kann ich auch als Quereinsteiger mitmachen?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Auf jeden Fall! Wir freuen uns über Quereinsteiger jeden Alters. Wenn du bereits
+              Erfahrung bei einer anderen Feuerwehr hast, können wir deine bisherige Ausbildung
+              anrechnen. Aber auch ohne jegliche Vorerfahrung bist du herzlich willkommen -- der
+              Einstieg ist jederzeit möglich.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-item__header" onclick="this.parentElement.classList.toggle('accordion-item--open'); this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+            Was sagt mein Arbeitgeber dazu?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-item__body" style="display: none;">
+            <p>
+              Arbeitgeber sind gesetzlich verpflichtet, dich für Feuerwehreinsätze und Lehrgänge
+              freizustellen. Den Verdienstausfall erstattet die Gemeinde. Viele Arbeitgeber unterstützen
+              das Ehrenamt bei der Feuerwehr sogar ausdrücklich, da sie wissen, dass Feuerwehrleute
+              besonders zuverlässig, teamfähig und belastbar sind.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt-Formular -->
+  <section class="section" id="kontakt-formular">
+    <div class="container">
+      <div class="section__header">
+        <h2>Interesse? Schreib uns!</h2>
+        <p>Fülle das Formular aus und wir melden uns bei dir. Oder kontaktiere unseren Kommandanten direkt.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Formular -->
+        <div>
+          <form action="#" method="post" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+
+            <div>
+              <label for="name" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-text);">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Vor- und Nachname"
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--transition-fast); background: var(--color-bg);"
+                onfocus="this.style.borderColor='var(--color-primary)'; this.style.outline='none';"
+                onblur="this.style.borderColor='var(--color-border)';">
+            </div>
+
+            <div>
+              <label for="email" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-text);">E-Mail *</label>
+              <input type="email" id="email" name="email" required placeholder="deine@email.de"
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--transition-fast); background: var(--color-bg);"
+                onfocus="this.style.borderColor='var(--color-primary)'; this.style.outline='none';"
+                onblur="this.style.borderColor='var(--color-border)';">
+            </div>
+
+            <div>
+              <label for="telefon" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-text);">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="07127 / ..."
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--transition-fast); background: var(--color-bg);"
+                onfocus="this.style.borderColor='var(--color-primary)'; this.style.outline='none';"
+                onblur="this.style.borderColor='var(--color-border)';">
+            </div>
+
+            <div>
+              <label for="interesse" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-text);">Interesse an *</label>
+              <select id="interesse" name="interesse" required
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--transition-fast); background: var(--color-bg); color: var(--color-text);"
+                onfocus="this.style.borderColor='var(--color-primary)'; this.style.outline='none';"
+                onblur="this.style.borderColor='var(--color-border)';">
+                <option value="" disabled selected>Bitte wählen...</option>
+                <option value="einsatzabteilung">Einsatzabteilung</option>
+                <option value="jugendfeuerwehr">Jugendfeuerwehr</option>
+                <option value="spielmannszug">Spielmannszug</option>
+                <option value="foerderverein">Förderverein / Passive Mitgliedschaft</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="nachricht" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-xs); color: var(--color-text);">Nachricht</label>
+              <textarea id="nachricht" name="nachricht" rows="5" placeholder="Erzähl uns etwas über dich und warum du mitmachen möchtest..."
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--transition-fast); background: var(--color-bg); resize: vertical;"
+                onfocus="this.style.borderColor='var(--color-primary)'; this.style.outline='none';"
+                onblur="this.style.borderColor='var(--color-border)';"></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn--primary btn--lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Nachricht senden
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Kontakt-Info -->
+        <div>
+          <div style="background: var(--color-bg-alt); border-radius: var(--radius-xl); padding: var(--space-2xl); height: 100%;">
+            <h3 style="margin-bottom: var(--space-xl);">Direkter Kontakt</h3>
+
+            <div class="contact-block" style="margin-bottom: var(--space-xl);">
+              <div class="contact-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4-4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="contact-block__title">Kommandant</div>
+                <div class="contact-block__text">
+                  David Schäffer<br>
+                  <a href="mailto:kommandant@feuerwehr-walddorfhaeslach.de">kommandant@feuerwehr-walddorfhaeslach.de</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block" style="margin-bottom: var(--space-xl);">
+              <div class="contact-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-block__title">Feuerwehrhaus</div>
+                <div class="contact-block__text">
+                  Walddorfer Straße 40<br>
+                  72141 Walddorfhäslach
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block" style="margin-bottom: var(--space-xl);">
+              <div class="contact-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <div class="contact-block__title">Übungsabende</div>
+                <div class="contact-block__text">
+                  Jeden zweiten Freitag ab 19:30 Uhr<br>
+                  Besucher sind jederzeit willkommen!
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block">
+              <div class="contact-block__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-primary);"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <div>
+                <div class="contact-block__title">Facebook</div>
+                <div class="contact-block__text">
+                  <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer">Feuerwehr Walddorfhäslach</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Noch Fragen?</h2>
+      <p>Komm einfach bei einer Übung vorbei oder ruf uns an. Wir freuen uns auf dich!</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="kontakt.html" class="btn btn--lg" style="background: white; color: var(--color-primary); border-color: white;">
+          Kontakt aufnehmen
+        </a>
+        <a href="#faq" class="btn btn--outline btn--lg">
+          FAQ ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Freiwillige Feuerwehr Walddorfhäslach</div>
+          <p class="footer__brand-text">
+            Ehrenamtlich im Einsatz für die Sicherheit der Gemeinde Walddorfhäslach.
+            Rund um die Uhr einsatzbereit.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <div class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="fahrzeuge.html">Fahrzeuge</a>
+            <a href="einsaetze.html">Einsätze</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Abteilungen</h4>
+          <div class="footer__links">
+            <a href="ueber-uns.html#einsatzabteilung">Einsatzabteilung</a>
+            <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+            <a href="ueber-uns.html#spielmannszug">Spielmannszug</a>
+            <a href="mitmachen.html">Mitmachen</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="kontakt.html">Kontakt & Anfahrt</a>
+            <a href="kontakt.html#impressum">Impressum</a>
+            <a href="kontakt.html#datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Freiwillige Feuerwehr Walddorfhäslach</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="kontakt.html#impressum">Impressum</a>
+          <a href="kontakt.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
+        <a href="kontakt.html#datenschutz">Mehr erfahren</a>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn--sm btn--outline" id="cookie-decline" style="color: white; border-color: rgba(255,255,255,0.3);">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

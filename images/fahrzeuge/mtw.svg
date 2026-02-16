@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <rect x="0" y="310" width="800" height="90" fill="#2d3748"/>
+  <rect x="0" y="350" width="800" height="3" fill="#718096" opacity="0.4"/>
+  <!-- Fahrzeug-Körper (Vito / Kleinbus) -->
+  <rect x="200" y="195" width="350" height="115" rx="10" fill="#C8102E"/>
+  <!-- Dachform gerundet -->
+  <rect x="210" y="185" width="330" height="20" rx="10" fill="#B91C1C"/>
+  <!-- Windschutzscheibe -->
+  <rect x="490" y="205" width="65" height="50" rx="4" fill="#63B3ED" opacity="0.7"/>
+  <!-- Seitenfenster -->
+  <rect x="360" y="205" width="50" height="40" rx="3" fill="#63B3ED" opacity="0.5"/>
+  <rect x="300" y="205" width="50" height="40" rx="3" fill="#63B3ED" opacity="0.5"/>
+  <rect x="240" y="205" width="50" height="40" rx="3" fill="#63B3ED" opacity="0.5"/>
+  <!-- MTW Beschriftung -->
+  <text x="340" y="280" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="white" text-anchor="middle">MTW</text>
+  <!-- Feuerwehr-Streifen -->
+  <rect x="200" y="292" width="350" height="6" fill="#E53E3E"/>
+  <rect x="200" y="301" width="350" height="2" fill="white" opacity="0.3"/>
+  <!-- Räder -->
+  <circle cx="270" cy="315" r="26" fill="#1a202c"/>
+  <circle cx="270" cy="315" r="16" fill="#2d3748"/>
+  <circle cx="270" cy="315" r="5" fill="#718096"/>
+  <circle cx="490" cy="315" r="26" fill="#1a202c"/>
+  <circle cx="490" cy="315" r="16" fill="#2d3748"/>
+  <circle cx="490" cy="315" r="5" fill="#718096"/>
+  <!-- Kennzeichen -->
+  <rect x="500" y="272" width="60" height="18" rx="2" fill="white"/>
+  <text x="530" y="285" font-family="Arial, sans-serif" font-weight="bold" font-size="9" fill="#1a202c" text-anchor="middle">RT-WH 37</text>
+  <!-- Label -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" opacity="0.6" text-anchor="middle">Mannschaftstransportwagen | Mercedes Benz Vito</text>
+</svg>

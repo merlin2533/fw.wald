@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt, Impressum und Datenschutz der Freiwilligen Feuerwehr Walddorfhäslach. Anfahrt zum Feuerwehrhaus und rechtliche Informationen.">
+  <meta name="keywords" content="Feuerwehr, Walddorfhäslach, Kontakt, Impressum, Datenschutz, Anfahrt, Feuerwehrhaus">
+  <meta property="og:title" content="Kontakt & Impressum - Freiwillige Feuerwehr Walddorfhäslach">
+  <meta property="og:description" content="Kontaktinformationen, Anfahrt, Impressum und Datenschutzerklärung der Freiwilligen Feuerwehr Walddorfhäslach.">
+  <meta property="og:type" content="website">
+  <title>Kontakt & Impressum - Freiwillige Feuerwehr Walddorfhäslach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <!-- Notfall-Leiste -->
+  <div class="emergency-bar">
+    <div class="container">
+      Notruf: <a href="tel:112">112</a> &nbsp;|&nbsp; Polizei: <a href="tel:110">110</a> &nbsp;|&nbsp; Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#C8102E"/>
+          <path d="M24 8L28 18H36L30 24L32 34L24 28L16 34L18 24L12 18H20L24 8Z" fill="white"/>
+        </svg>
+        <div class="header__logo-text">
+          <span class="header__logo-title">FF Walddorfhäslach</span>
+          <span class="header__logo-subtitle">Freiwillige Feuerwehr</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="nav-close" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" class="nav__link">Startseite</a>
+        <a href="ueber-uns.html" class="nav__link">Über uns</a>
+        <a href="fahrzeuge.html" class="nav__link">Fahrzeuge</a>
+        <a href="einsaetze.html" class="nav__link">Einsätze</a>
+        <a href="jugendfeuerwehr.html" class="nav__link">Jugend</a>
+        <a href="kontakt.html" class="nav__link nav__link--active">Kontakt</a>
+        <a href="mitmachen.html" class="nav__link nav__link--cta">Mitmachen</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span>/</span>
+        <span class="current">Kontakt & Impressum</span>
+      </div>
+      <h1>Kontakt & Impressum</h1>
+      <p>So erreichen Sie uns - alle Kontaktdaten, Anfahrt und rechtliche Informationen auf einen Blick.</p>
+    </div>
+  </section>
+
+  <!-- Kontakt-Informationen -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Kontaktdaten</h2>
+        <p>Wir sind für Sie da - so erreichen Sie die Freiwillige Feuerwehr Walddorfhäslach</p>
+      </div>
+
+      <div class="contact-info">
+        <!-- Feuerwehrhaus -->
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">Feuerwehrhaus</h3>
+            <p class="contact-block__text">
+              Walddorfer Straße 40<br>
+              72141 Walddorfhäslach
+            </p>
+          </div>
+        </div>
+
+        <!-- Kommandant -->
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4-4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">Kommandant</h3>
+            <p class="contact-block__text">
+              David Schäffer<br>
+              <a href="mailto:kommandant@feuerwehr-walddorfhaeslach.de">kommandant@feuerwehr-walddorfhaeslach.de</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- E-Mail -->
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 7l-10 7L2 7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">E-Mail</h3>
+            <p class="contact-block__text">
+              <a href="mailto:kommandant@feuerwehr-walddorfhaeslach.de">kommandant@feuerwehr-walddorfhaeslach.de</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Facebook -->
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">Facebook</h3>
+            <p class="contact-block__text">
+              <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer">Feuerwehr Walddorfhäslach</a><br>
+              Neuigkeiten, Einsatzberichte und mehr
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notfallnummern -->
+  <section class="emergency-strip">
+    <div class="container">
+      <div class="emergency-strip__inner">
+        <a href="tel:112" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">112</div>
+            <div class="emergency-item__label">Feuerwehr & Rettungsdienst</div>
+          </div>
+        </a>
+        <a href="tel:110" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">110</div>
+            <div class="emergency-item__label">Polizei</div>
+          </div>
+        </a>
+        <a href="tel:116117" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">116 117</div>
+            <div class="emergency-item__label">Ärztlicher Bereitschaftsdienst</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anfahrt / Karte -->
+  <section class="section section--alt" id="anfahrt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Anfahrt</h2>
+        <p>So finden Sie unser Feuerwehrhaus in Walddorfhäslach</p>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.5!2d9.1833!3d48.5833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sWalddorfer+Stra%C3%9Fe+40%2C+72141+Walddorfh%C3%A4slach!5e0!3m2!1sde!2sde!4v1700000000000"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Karte: Feuerwehrhaus Walddorfhäslach, Walddorfer Straße 40">
+        </iframe>
+      </div>
+
+      <div class="contact-info mt-xl">
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">Adresse</h3>
+            <p class="contact-block__text">
+              Feuerwehrhaus Walddorfhäslach<br>
+              Walddorfer Straße 40<br>
+              72141 Walddorfhäslach
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-block animate-in">
+          <div class="contact-block__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="contact-block__title">Übungsabende</h3>
+            <p class="contact-block__text">
+              Die Übungsabende finden regelmäßig im Feuerwehrhaus statt. Termine werden auf unserer Facebook-Seite und per Aushang bekannt gegeben.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impressum -->
+  <section class="section" id="impressum">
+    <div class="container">
+      <div class="section__header">
+        <h2>Impressum</h2>
+        <p>Angaben gemäß § 5 TMG</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div>
+          <h3 class="mb-md">Herausgeber</h3>
+          <p>
+            <strong>Gemeinde Walddorfhäslach</strong><br>
+            vertreten durch Bürgermeisterin Silke Höflinger
+          </p>
+          <p>
+            Hauptstraße 9<br>
+            72141 Walddorfhäslach
+          </p>
+          <p>
+            Telefon: <a href="tel:+4971279266-0">07127/9266-0</a><br>
+            Fax: 07127/9266-44<br>
+            E-Mail: <a href="mailto:info@walddorfhaeslach.de">info@walddorfhaeslach.de</a>
+          </p>
+
+          <h3 class="mt-xl mb-md">Verantwortlich für den Inhalt (Feuerwehr)</h3>
+          <p>
+            <strong>Freiwillige Feuerwehr Walddorfhäslach</strong><br>
+            Kommandant David Schäffer<br>
+            Walddorfer Straße 40<br>
+            72141 Walddorfhäslach
+          </p>
+          <p>
+            E-Mail: <a href="mailto:kommandant@feuerwehr-walddorfhaeslach.de">kommandant@feuerwehr-walddorfhaeslach.de</a>
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-md">Webseiten-Unterstützung</h3>
+          <p>
+            <strong>digiwerk&reg; GmbH</strong><br>
+            Buchenstraße 2<br>
+            72141 Walddorfhäslach
+          </p>
+          <p>
+            E-Mail: <a href="mailto:info@digiwerk.de">info@digiwerk.de</a>
+          </p>
+
+          <h3 class="mt-xl mb-md">Haftungsausschluss</h3>
+          <h4 class="mb-sm">Haftung für Inhalte</h4>
+          <p>
+            Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+          </p>
+
+          <h4 class="mt-lg mb-sm">Haftung für Links</h4>
+          <p>
+            Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+          </p>
+
+          <h4 class="mt-lg mb-sm">Urheberrecht</h4>
+          <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Datenschutz -->
+  <section class="section section--alt" id="datenschutz">
+    <div class="container">
+      <div class="section__header">
+        <h2>Datenschutzerklärung</h2>
+        <p>Informationen zum Umgang mit Ihren personenbezogenen Daten gemäß DSGVO</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+
+        <h3 class="mb-md">1. Datenschutz auf einen Blick</h3>
+        <h4 class="mb-sm">Allgemeine Hinweise</h4>
+        <p>
+          Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer nachfolgend aufgeführten Datenschutzerklärung.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Datenerfassung auf dieser Website</h4>
+        <p>
+          <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>
+          Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Impressum" dieser Website entnehmen.
+        </p>
+        <p>
+          <strong>Wie erfassen wir Ihre Daten?</strong><br>
+          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, z. B. durch Eingabe in ein Kontaktformular oder per E-Mail. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+        </p>
+        <p>
+          <strong>Wofür nutzen wir Ihre Daten?</strong><br>
+          Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+        </p>
+        <p>
+          <strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong><br>
+          Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+        </p>
+
+        <h3 class="mt-xl mb-md">2. Verantwortliche Stelle</h3>
+        <p>
+          Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+        </p>
+        <p>
+          Gemeinde Walddorfhäslach<br>
+          Bürgermeisterin Silke Höflinger<br>
+          Hauptstraße 9<br>
+          72141 Walddorfhäslach
+        </p>
+        <p>
+          Telefon: 07127/9266-0<br>
+          E-Mail: <a href="mailto:info@walddorfhaeslach.de">info@walddorfhaeslach.de</a>
+        </p>
+        <p>
+          Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
+        </p>
+
+        <h3 class="mt-xl mb-md">3. Hosting</h3>
+        <p>
+          Wir hosten die Inhalte unserer Website bei einem externen Dienstleister (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+        </p>
+        <p>
+          Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+        </p>
+
+        <h3 class="mt-xl mb-md">4. Allgemeine Hinweise und Pflichtinformationen</h3>
+
+        <h4 class="mt-lg mb-sm">Datenschutz</h4>
+        <p>
+          Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+        </p>
+        <p>
+          Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
+        </p>
+        <p>
+          Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Speicherdauer</h4>
+        <p>
+          Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h4>
+        <p>
+          Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen (Art. 21 DSGVO)</h4>
+        <p>
+          <strong>Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen. Die jeweilige Rechtsgrundlage, auf denen eine Verarbeitung beruht, entnehmen Sie dieser Datenschutzerklärung. Wenn Sie Widerspruch einlegen, werden wir Ihre betroffenen personenbezogenen Daten nicht mehr verarbeiten, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</strong>
+        </p>
+
+        <h4 class="mt-lg mb-sm">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h4>
+        <p>
+          Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu. Die zuständige Aufsichtsbehörde ist:
+        </p>
+        <p>
+          Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br>
+          Lautenschlagerstraße 20<br>
+          70173 Stuttgart<br>
+          Telefon: 0711/615541-0<br>
+          E-Mail: poststelle@lfdi.bwl.de
+        </p>
+
+        <h4 class="mt-lg mb-sm">Recht auf Datenübertragbarkeit</h4>
+        <p>
+          Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Auskunft, Löschung und Berichtigung</h4>
+        <p>
+          Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Recht auf Einschränkung der Verarbeitung</h4>
+        <p>
+          Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:
+        </p>
+        <p>
+          Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen. Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+        </p>
+
+        <h3 class="mt-xl mb-md">5. Datenerfassung auf dieser Website</h3>
+
+        <h4 class="mt-lg mb-sm">Cookies</h4>
+        <p>
+          Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt.
+        </p>
+        <p>
+          Cookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
+        </p>
+        <p>
+          Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z. B. Warenkorbfunktion) oder zur Optimierung der Website (z. B. Cookies zur Messung des Webpublikums) erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von erforderlichen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.
+        </p>
+        <p>
+          Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Server-Log-Dateien</h4>
+        <p>
+          Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+        </p>
+        <p>
+          - Browsertyp und Browserversion<br>
+          - verwendetes Betriebssystem<br>
+          - Referrer URL<br>
+          - Hostname des zugreifenden Rechners<br>
+          - Uhrzeit der Serveranfrage<br>
+          - IP-Adresse
+        </p>
+        <p>
+          Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Dateien erfasst werden.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Kontaktaufnahme per E-Mail</h4>
+        <p>
+          Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+        </p>
+        <p>
+          Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.
+        </p>
+        <p>
+          Die von Ihnen an uns per E-Mail übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
+        </p>
+
+        <h3 class="mt-xl mb-md">6. Soziale Medien</h3>
+
+        <h4 class="mt-lg mb-sm">Facebook-Plugins</h4>
+        <p>
+          Auf dieser Website sind Elemente des sozialen Netzwerks Facebook integriert. Anbieter dieses Dienstes ist die Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland. Die erfassten Daten werden nach Aussage von Facebook jedoch auch in die USA und in andere Drittländer übertragen.
+        </p>
+        <p>
+          Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Facebook-Server hergestellt. Facebook erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse diese Website besucht haben. Wenn Sie den Facebook-„Like-Button" anklicken, während Sie in Ihrem Facebook-Account eingeloggt sind, können Sie die Inhalte dieser Website auf Ihrem Facebook-Profil verlinken. Dadurch kann Facebook den Besuch dieser Website Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Facebook erhalten.
+        </p>
+        <p>
+          Die Verwendung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Facebook unter:
+          <a href="https://de-de.facebook.com/privacy/explanation" target="_blank" rel="noopener noreferrer">https://de-de.facebook.com/privacy/explanation</a>.
+        </p>
+
+        <h3 class="mt-xl mb-md">7. Plugins und Tools</h3>
+
+        <h4 class="mt-lg mb-sm">Google Maps</h4>
+        <p>
+          Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
+        </p>
+        <p>
+          Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung. Wenn Google Maps aktiviert ist, kann Google zum Zwecke der einheitlichen Darstellung der Schriftarten Google Fonts verwenden. Beim Aufruf von Google Maps lädt Ihr Browser die benötigten Web Fonts in Ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.
+        </p>
+        <p>
+          Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote und an einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
+        </p>
+        <p>
+          Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google:
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
+        </p>
+
+        <h4 class="mt-lg mb-sm">Google Fonts (lokal)</h4>
+        <p>
+          Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts werden über einen externen Server (Google) geladen. Hierbei wird Ihre IP-Adresse an Google übermittelt. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der einheitlichen Darstellung des Schriftbildes auf seiner Website.
+        </p>
+        <p>
+          Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar.
+        </p>
+        <p>
+          Weitere Informationen zu Google Fonts finden Sie unter
+          <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a>
+          und in der Datenschutzerklärung von Google:
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
+        </p>
+
+        <h3 class="mt-xl mb-md">8. Aktualität und Änderung dieser Datenschutzerklärung</h3>
+        <p>
+          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Februar 2026.
+        </p>
+        <p>
+          Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Website von Ihnen abgerufen und ausgedruckt werden.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mitmachen -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Werde Teil unseres Teams!</h2>
+      <p>Du möchtest dich ehrenamtlich engagieren und anderen helfen? Wir suchen immer engagierte Mitglieder für unsere Einsatzabteilung, den Spielmannszug und die Jugendfeuerwehr.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mitmachen.html" class="btn btn--lg" style="background: white; color: var(--color-primary); border-color: white;">
+          Jetzt informieren
+        </a>
+        <a href="mailto:kommandant@feuerwehr-walddorfhaeslach.de" class="btn btn--outline btn--lg">
+          E-Mail schreiben
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Freiwillige Feuerwehr Walddorfhäslach</div>
+          <p class="footer__brand-text">
+            Ehrenamtlich im Einsatz für die Sicherheit der Gemeinde Walddorfhäslach.
+            Rund um die Uhr einsatzbereit.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <div class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="fahrzeuge.html">Fahrzeuge</a>
+            <a href="einsaetze.html">Einsätze</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Abteilungen</h4>
+          <div class="footer__links">
+            <a href="ueber-uns.html#einsatzabteilung">Einsatzabteilung</a>
+            <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+            <a href="ueber-uns.html#spielmannszug">Spielmannszug</a>
+            <a href="mitmachen.html">Mitmachen</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="kontakt.html">Kontakt & Anfahrt</a>
+            <a href="kontakt.html#impressum">Impressum</a>
+            <a href="kontakt.html#datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Freiwillige Feuerwehr Walddorfhäslach</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="kontakt.html#impressum">Impressum</a>
+          <a href="kontakt.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
+        <a href="kontakt.html#datenschutz">Mehr erfahren</a>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn--sm btn--outline" id="cookie-decline" style="color: white; border-color: rgba(255,255,255,0.3);">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

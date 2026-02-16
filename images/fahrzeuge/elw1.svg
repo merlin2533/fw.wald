@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a365d"/>
+      <stop offset="100%" stop-color="#2b6cb0"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#4a5568"/>
+    </linearGradient>
+  </defs>
+  <!-- Hintergrund -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Straße -->
+  <rect x="0" y="310" width="800" height="90" fill="url(#road)"/>
+  <rect x="0" y="350" width="800" height="3" fill="#718096" opacity="0.4"/>
+  <!-- Fahrzeug-Körper (Sprinter) -->
+  <rect x="180" y="180" width="380" height="130" rx="8" fill="#C8102E"/>
+  <!-- Fahrerkabine -->
+  <rect x="500" y="200" width="120" height="110" rx="6" fill="#9B0B22"/>
+  <!-- Windschutzscheibe -->
+  <rect x="520" y="210" width="80" height="55" rx="4" fill="#63B3ED" opacity="0.7"/>
+  <!-- Seitenfenster -->
+  <rect x="360" y="195" width="60" height="45" rx="3" fill="#63B3ED" opacity="0.5"/>
+  <rect x="280" y="195" width="60" height="45" rx="3" fill="#63B3ED" opacity="0.5"/>
+  <!-- Blaulicht -->
+  <rect x="320" y="168" width="100" height="16" rx="8" fill="#3182CE"/>
+  <circle cx="345" cy="176" r="5" fill="#63B3ED"/>
+  <circle cx="395" cy="176" r="5" fill="#63B3ED"/>
+  <!-- Dach-Antennen -->
+  <line x1="280" y1="180" x2="280" y2="150" stroke="#718096" stroke-width="2"/>
+  <line x1="450" y1="180" x2="450" y2="155" stroke="#718096" stroke-width="2"/>
+  <!-- ELW Beschriftung -->
+  <text x="320" y="275" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="white" text-anchor="middle">ELW 1</text>
+  <!-- Feuerwehr-Streifen -->
+  <rect x="180" y="290" width="440" height="8" fill="#E53E3E"/>
+  <rect x="180" y="302" width="440" height="3" fill="white" opacity="0.3"/>
+  <!-- Räder -->
+  <circle cx="260" cy="315" r="30" fill="#1a202c"/>
+  <circle cx="260" cy="315" r="18" fill="#2d3748"/>
+  <circle cx="260" cy="315" r="6" fill="#718096"/>
+  <circle cx="540" cy="315" r="30" fill="#1a202c"/>
+  <circle cx="540" cy="315" r="18" fill="#2d3748"/>
+  <circle cx="540" cy="315" r="6" fill="#718096"/>
+  <!-- Kennzeichen -->
+  <rect x="530" y="280" width="80" height="20" rx="2" fill="white"/>
+  <text x="570" y="295" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#1a202c" text-anchor="middle">RT-WH 1112</text>
+  <!-- Label -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" opacity="0.6" text-anchor="middle">Einsatzleitwagen | Mercedes Benz Sprinter | Bj. 2014</text>
+</svg>

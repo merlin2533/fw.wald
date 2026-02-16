@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Einsatzberichte der Freiwilligen Feuerwehr Walddorfhäslach - Brandeinsätze, Technische Hilfeleistungen und mehr.">
+  <meta name="keywords" content="Feuerwehr, Walddorfhäslach, Einsätze, Brandeinsatz, Technische Hilfeleistung, Einsatzberichte">
+  <meta property="og:title" content="Einsätze - Freiwillige Feuerwehr Walddorfhäslach">
+  <meta property="og:description" content="Einsatzberichte und Statistiken der Freiwilligen Feuerwehr Walddorfhäslach.">
+  <meta property="og:type" content="website">
+  <title>Einsätze - Freiwillige Feuerwehr Walddorfhäslach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <!-- Notfall-Leiste -->
+  <div class="emergency-bar">
+    <div class="container">
+      Notruf: <a href="tel:112">112</a> &nbsp;|&nbsp; Polizei: <a href="tel:110">110</a> &nbsp;|&nbsp; Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#C8102E"/>
+          <path d="M24 8L28 18H36L30 24L32 34L24 28L16 34L18 24L12 18H20L24 8Z" fill="white"/>
+        </svg>
+        <div class="header__logo-text">
+          <span class="header__logo-title">FF Walddorfhäslach</span>
+          <span class="header__logo-subtitle">Freiwillige Feuerwehr</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="nav-close" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" class="nav__link">Startseite</a>
+        <a href="ueber-uns.html" class="nav__link">Über uns</a>
+        <a href="fahrzeuge.html" class="nav__link">Fahrzeuge</a>
+        <a href="einsaetze.html" class="nav__link nav__link--active">Einsätze</a>
+        <a href="jugendfeuerwehr.html" class="nav__link">Jugend</a>
+        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="mitmachen.html" class="nav__link nav__link--cta">Mitmachen</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span>/</span>
+        <span class="current">Einsätze</span>
+      </div>
+      <h1>Unsere Einsätze</h1>
+      <p>Einsatzberichte und Statistiken der Freiwilligen Feuerwehr Walddorfhäslach - von Brandeinsätzen bis zur technischen Hilfeleistung.</p>
+    </div>
+  </section>
+
+  <!-- Einsatz-Statistik Übersicht -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="stats">
+        <div class="stat animate-in">
+          <div class="stat__number">127</div>
+          <div class="stat__label">Einsätze 2025</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">38</div>
+          <div class="stat__label">Brandeinsätze</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">52</div>
+          <div class="stat__label">Technische Hilfe</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">1.840</div>
+          <div class="stat__label">Einsatzstunden</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Einsätze nach Jahr -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Einsatzberichte nach Jahr</h2>
+        <p>Durchsuchen Sie unsere Einsatzberichte aus den vergangenen Jahren</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist">
+        <button class="tab tab--active" role="tab" aria-selected="true" data-tab="2026">2026</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2025">2025</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2024">2024</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2023">2023</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2022">2022</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2021">2021</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2020">2020</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2019">2019</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2018">2018</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2017">2017</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2016">2016</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2015">2015</button>
+      </div>
+
+      <!-- 2026 -->
+      <div class="tab-content tab-content--active" data-tab-content="2026">
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Verkehrsunfall B27 - Fahrzeugbergung</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                12.02.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                B27, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Kellerbrand Wohnhaus Häslacher Straße</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                08.02.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Häslacher Straße, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+                Brandeinsatz
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Brandmeldeanlage Gewerbegebiet - Fehlalarm</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                03.02.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Gewerbegebiet, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Fehlalarm
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Sturmschaden - Baum auf Fahrbahn</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                28.01.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                K6900, Walddorf
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Flächenbrand Feldweg Richtung Rübgarten</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                21.01.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Feldweg, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+                Brandeinsatz
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Ölspur Ortsdurchfahrt Walddorf</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                15.01.2026
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ortsdurchfahrt, Walddorf
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                Sonstige
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2025 -->
+      <div class="tab-content" data-tab-content="2025">
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Dachstuhlbrand Einfamilienhaus Gartenstraße</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                18.11.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Gartenstraße, Häslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+                Brandeinsatz
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Eingeklemmte Person nach Verkehrsunfall L382</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                02.10.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                L382, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Containerbrand Industriegebiet</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                15.08.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Industriegebiet, Walddorf
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+                Brandeinsatz
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Hochwassereinsatz nach Starkregen</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                22.06.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Gemeindegebiet Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Rauchmelder-Alarm Mehrfamilienhaus Schulstraße</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                09.04.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Schulstraße, Häslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Fehlalarm
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Türöffnung - Notfall in Wohnung</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                14.02.2025
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Walddorfer Straße, Walddorf
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2024 -->
+      <div class="tab-content" data-tab-content="2024">
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Scheunenbrand Außenbereich Häslach</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                27.09.2024
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Außenbereich, Häslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+                Brandeinsatz
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">Überfluteter Keller nach Unwetter</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                14.07.2024
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ringstraße, Walddorf
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="operation-item animate-in">
+          <div class="operation-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="operation-item__content">
+            <div class="operation-item__title">PKW-Bergung aus Graben</div>
+            <div class="operation-item__meta">
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                03.03.2024
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                K6901, Walddorfhäslach
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                Technische Hilfeleistung
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Placeholder tabs for older years -->
+      <div class="tab-content" data-tab-content="2023">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          98 Einsätze im Jahr 2023 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2022">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          112 Einsätze im Jahr 2022 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2021">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          89 Einsätze im Jahr 2021 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2020">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          76 Einsätze im Jahr 2020 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2019">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          104 Einsätze im Jahr 2019 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2018">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          91 Einsätze im Jahr 2018 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2017">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          85 Einsätze im Jahr 2017 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2016">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          79 Einsätze im Jahr 2016 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+      <div class="tab-content" data-tab-content="2015">
+        <p style="text-align: center; color: var(--color-text-light); padding: var(--space-3xl) 0;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="display: block; margin: 0 auto var(--space-md);"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          72 Einsätze im Jahr 2015 archiviert.<br>
+          <span style="font-size: 0.875rem;">Einsatzberichte werden derzeit digitalisiert.</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Einsatzstatistik -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Einsatzstatistik 2025</h2>
+        <p>Verteilung der Einsätze nach Art im vergangenen Jahr</p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Bar Chart -->
+        <div class="stats-chart animate-in">
+          <h3 style="font-size: 1.125rem; margin-bottom: var(--space-xl);">Einsätze nach Typ</h3>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">Brandeinsatz</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 30%;">38</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">Techn. Hilfeleistung</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 41%; background: linear-gradient(90deg, #F5A623, #F7C15E);">52</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">Fehlalarm</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 18%; background: linear-gradient(90deg, #6B7280, #9CA3AF);">23</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">Sonstige</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 11%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">14</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jahresübersicht -->
+        <div class="stats-chart animate-in">
+          <h3 style="font-size: 1.125rem; margin-bottom: var(--space-xl);">Jahresübersicht</h3>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2025</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 100%;">127</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2024</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 87%;">110</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2023</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 77%;">98</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2022</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 88%;">112</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2021</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 70%;">89</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2020</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 60%;">76</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2019</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 82%;">104</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2018</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 72%;">91</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2017</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 67%;">85</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2016</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 62%;">79</div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stats-bar__label">2015</div>
+            <div class="stats-bar__track">
+              <div class="stats-bar__fill" style="width: 57%;">72</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Einsatzarten Erklärung -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Einsatzarten</h2>
+        <p>Die verschiedenen Einsatzarten unserer Feuerwehr im Überblick</p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Brandeinsatz</h3>
+          <p class="feature-card__text">Bekämpfung von Bränden aller Art - von Kleinbränden bis zu Großschadenslagen. Menschenrettung hat immer oberste Priorität.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Technische Hilfe</h3>
+          <p class="feature-card__text">Verkehrsunfälle, Unwetterschäden, Türöffnungen, Ölspuren und Hochwassereinsätze zählen zu unserem Aufgabengebiet.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3 class="feature-card__title">Fehlalarm</h3>
+          <p class="feature-card__text">Automatische Brandmeldeanlagen oder Notrufe, bei denen sich vor Ort keine Gefahrenlage bestätigt. Wir rücken trotzdem immer aus.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="feature-card__title">Sonstige</h3>
+          <p class="feature-card__text">Sicherheitswachen bei Veranstaltungen, Amtshilfe für andere Behörden und weitere Einsätze im Dienst der Allgemeinheit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notfallnummern -->
+  <section class="emergency-strip">
+    <div class="container">
+      <div class="emergency-strip__inner">
+        <a href="tel:112" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">112</div>
+            <div class="emergency-item__label">Feuerwehr & Rettungsdienst</div>
+          </div>
+        </a>
+        <a href="tel:110" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">110</div>
+            <div class="emergency-item__label">Polizei</div>
+          </div>
+        </a>
+        <a href="tel:116117" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">116 117</div>
+            <div class="emergency-item__label">Ärztlicher Bereitschaftsdienst</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mitmachen -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Werde Teil unseres Teams!</h2>
+      <p>Du möchtest dich ehrenamtlich engagieren und anderen helfen? Wir suchen immer engagierte Mitglieder für unsere Einsatzabteilung, den Spielmannszug und die Jugendfeuerwehr.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mitmachen.html" class="btn btn--lg" style="background: white; color: var(--color-primary); border-color: white;">
+          Jetzt informieren
+        </a>
+        <a href="kontakt.html" class="btn btn--outline btn--lg">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Freiwillige Feuerwehr Walddorfhäslach</div>
+          <p class="footer__brand-text">
+            Ehrenamtlich im Einsatz für die Sicherheit der Gemeinde Walddorfhäslach.
+            Rund um die Uhr einsatzbereit.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <div class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="fahrzeuge.html">Fahrzeuge</a>
+            <a href="einsaetze.html">Einsätze</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Abteilungen</h4>
+          <div class="footer__links">
+            <a href="ueber-uns.html#einsatzabteilung">Einsatzabteilung</a>
+            <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+            <a href="ueber-uns.html#spielmannszug">Spielmannszug</a>
+            <a href="mitmachen.html">Mitmachen</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="kontakt.html">Kontakt & Anfahrt</a>
+            <a href="kontakt.html#impressum">Impressum</a>
+            <a href="kontakt.html#datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Freiwillige Feuerwehr Walddorfhäslach</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="kontakt.html#impressum">Impressum</a>
+          <a href="kontakt.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
+        <a href="kontakt.html#datenschutz">Mehr erfahren</a>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn--sm btn--outline" id="cookie-decline" style="color: white; border-color: rgba(255,255,255,0.3);">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Tab-Funktionalität für Einsatzjahre
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab[data-tab]');
+      const tabContents = document.querySelectorAll('.tab-content[data-tab-content]');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var targetYear = this.getAttribute('data-tab');
+
+          // Alle Tabs deaktivieren
+          tabs.forEach(function(t) {
+            t.classList.remove('tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+
+          // Alle Inhalte ausblenden
+          tabContents.forEach(function(content) {
+            content.classList.remove('tab-content--active');
+          });
+
+          // Ausgewählten Tab und Inhalt aktivieren
+          this.classList.add('tab--active');
+          this.setAttribute('aria-selected', 'true');
+
+          var targetContent = document.querySelector('.tab-content[data-tab-content="' + targetYear + '"]');
+          if (targetContent) {
+            targetContent.classList.add('tab-content--active');
+
+            // Animationen erneut auslösen
+            var animateItems = targetContent.querySelectorAll('.animate-in');
+            animateItems.forEach(function(item, index) {
+              item.classList.remove('animate-in--visible');
+              setTimeout(function() {
+                item.classList.add('animate-in--visible');
+              }, index * 100);
+            });
+          }
+        });
+      });
+
+      // Initiale Animationen für den aktiven Tab
+      var activeContent = document.querySelector('.tab-content--active');
+      if (activeContent) {
+        var animateItems = activeContent.querySelectorAll('.animate-in');
+        animateItems.forEach(function(item, index) {
+          setTimeout(function() {
+            item.classList.add('animate-in--visible');
+          }, 300 + index * 100);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

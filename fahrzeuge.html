@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fahrzeuge der Freiwilligen Feuerwehr Walddorfhäslach - ELW 1, GW-T 2, HLF 16/12, LF 20, MTW und ehemalige Fahrzeuge.">
+  <meta name="keywords" content="Feuerwehr, Walddorfhäslach, Fahrzeuge, ELW, HLF, LF, GWT, MTW, Einsatzfahrzeuge">
+  <meta property="og:title" content="Fahrzeuge - Freiwillige Feuerwehr Walddorfhäslach">
+  <meta property="og:description" content="Unsere Einsatzfahrzeuge im Überblick - ELW 1, GW-T 2, HLF 16/12, LF 20 und MTW.">
+  <meta property="og:type" content="website">
+  <title>Fahrzeuge - Freiwillige Feuerwehr Walddorfhäslach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <!-- Notfall-Leiste -->
+  <div class="emergency-bar">
+    <div class="container">
+      Notruf: <a href="tel:112">112</a> &nbsp;|&nbsp; Polizei: <a href="tel:110">110</a> &nbsp;|&nbsp; Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#C8102E"/>
+          <path d="M24 8L28 18H36L30 24L32 34L24 28L16 34L18 24L12 18H20L24 8Z" fill="white"/>
+        </svg>
+        <div class="header__logo-text">
+          <span class="header__logo-title">FF Walddorfhäslach</span>
+          <span class="header__logo-subtitle">Freiwillige Feuerwehr</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="nav-close" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" class="nav__link">Startseite</a>
+        <a href="ueber-uns.html" class="nav__link">Über uns</a>
+        <a href="fahrzeuge.html" class="nav__link nav__link--active">Fahrzeuge</a>
+        <a href="einsaetze.html" class="nav__link">Einsätze</a>
+        <a href="jugendfeuerwehr.html" class="nav__link">Jugend</a>
+        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="mitmachen.html" class="nav__link nav__link--cta">Mitmachen</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span>/</span>
+        <span class="current">Fahrzeuge</span>
+      </div>
+      <h1>Unsere Fahrzeuge</h1>
+      <p>Der Fuhrpark der Freiwilligen Feuerwehr Walddorfhäslach umfasst 5 Einsatzfahrzeuge für vielfältige Einsatzszenarien.</p>
+    </div>
+  </section>
+
+  <!-- Fahrzeugübersicht -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Einsatzfahrzeuge</h2>
+        <p>Alle Fahrzeuge sind einsatzbereit und decken ein breites Spektrum an Einsatzlagen ab.</p>
+      </div>
+
+      <div class="grid grid--2">
+
+        <!-- ELW 1 (1/11) -->
+        <article class="vehicle-card animate-in">
+          <img src="images/fahrzeuge/elw1.svg" alt="ELW 1 - Einsatzleitwagen der FF Walddorfhäslach" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">ELW 1 (1/11)</div>
+            <div class="vehicle-card__type">Einsatzleitwagen</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Fahrgestell</strong>
+                Mercedes Benz Sprinter
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Baujahr</strong>
+                2014
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Kennzeichen</strong>
+                RT-WH 1112
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Funkrufname</strong>
+                Florian Walddorfhäslach 1/11
+              </div>
+            </div>
+            <p class="card__text">Der Einsatzleitwagen dient der Führung und Koordination bei größeren Einsatzlagen. Er ist mit moderner Kommunikationstechnik ausgestattet und ermöglicht die Einsatzleitung vor Ort.</p>
+          </div>
+        </article>
+
+        <!-- GW-T 2 (1/74) -->
+        <article class="vehicle-card animate-in">
+          <img src="images/fahrzeuge/gwt2.svg" alt="GW-T 2 - Gerätewagen Transport der FF Walddorfhäslach" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">GW-T 2 (1/74)</div>
+            <div class="vehicle-card__type">Gerätewagen Transport</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Kennzeichen</strong>
+                RT-WH 7410
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Im Dienst seit</strong>
+                01.05.2021
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Funkrufname</strong>
+                Florian Walddorfhäslach 1/74
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Ersetzt</strong>
+                LF 16-TS
+              </div>
+            </div>
+            <p class="card__text">Der Gerätewagen Transport ersetzt seit 2021 das ehemalige LF 16-TS. Er dient dem Transport von zusätzlichem Gerät, Material und Ausrüstung zu Einsatzstellen und unterstützt bei Logistikaufgaben.</p>
+          </div>
+        </article>
+
+        <!-- HLF 16/12 (1/46) -->
+        <article class="vehicle-card animate-in">
+          <img src="images/fahrzeuge/hlf.svg" alt="HLF 16/12 - Hilfeleistungslöschgruppenfahrzeug der FF Walddorfhäslach" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">HLF 16/12 (1/46)</div>
+            <div class="vehicle-card__type">Hilfeleistungslöschgruppenfahrzeug</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Kennzeichen</strong>
+                RT-WH 112
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Funkrufname</strong>
+                Florian Walddorfhäslach 1/46
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Besatzung</strong>
+                1/8 (Staffel)
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Löschwasser</strong>
+                1.600 Liter
+              </div>
+            </div>
+            <p class="card__text">Das Hilfeleistungslöschgruppenfahrzeug ist vielseitig einsetzbar. Es kommt bei technischen Rettungen wie Verkehrsunfällen, Türöffnungen und weiteren Hilfeleistungen zum Einsatz und verfügt über umfangreiche Ausrüstung zur Brandbekämpfung.</p>
+          </div>
+        </article>
+
+        <!-- LF 20 (1/44) -->
+        <article class="vehicle-card animate-in">
+          <img src="images/fahrzeuge/lf20.svg" alt="LF 20 - Löschgruppenfahrzeug der FF Walddorfhäslach" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">LF 20 (1/44)</div>
+            <div class="vehicle-card__type">Löschgruppenfahrzeug</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Kennzeichen</strong>
+                RT-WH 1442
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Funkrufname</strong>
+                Florian Walddorfhäslach 1/44
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Besatzung</strong>
+                1/8 (Staffel)
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Einsatzgebiet</strong>
+                Brandbekämpfung
+              </div>
+            </div>
+            <p class="card__text">Das Löschgruppenfahrzeug LF 20 ist das Hauptlöschfahrzeug unserer Wehr. Es bildet das Rückgrat der Brandbekämpfung und ist mit umfangreicher Ausrüstung für den Löschangriff ausgestattet.</p>
+          </div>
+        </article>
+
+        <!-- MTW (1/19) -->
+        <article class="vehicle-card animate-in">
+          <img src="images/fahrzeuge/mtw.svg" alt="MTW - Mannschaftstransportwagen der FF Walddorfhäslach" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">MTW (1/19)</div>
+            <div class="vehicle-card__type">Mannschaftstransportwagen</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Fahrgestell</strong>
+                Mercedes Benz Vito
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Kennzeichen</strong>
+                RT-WH 37
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Funkrufname</strong>
+                Florian Walddorfhäslach 1/19
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Einsatzgebiet</strong>
+                Personal- & Materialtransport
+              </div>
+            </div>
+            <p class="card__text">Der Mannschaftstransportwagen dient dem Transport von Personal und Ausrüstung. Er befördert unter anderem Schläuche und Atemschutzgeräte zur Einsatzstelle und wird auch für Übungsfahrten eingesetzt.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Notfallnummern -->
+  <section class="emergency-strip">
+    <div class="container">
+      <div class="emergency-strip__inner">
+        <a href="tel:112" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">112</div>
+            <div class="emergency-item__label">Feuerwehr & Rettungsdienst</div>
+          </div>
+        </a>
+        <a href="tel:110" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">110</div>
+            <div class="emergency-item__label">Polizei</div>
+          </div>
+        </a>
+        <a href="tel:116117" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">116 117</div>
+            <div class="emergency-item__label">Ärztlicher Bereitschaftsdienst</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ehemalige Fahrzeuge -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Ehemalige Fahrzeuge</h2>
+        <p>Fahrzeuge, die nicht mehr im aktiven Dienst unserer Wehr stehen.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <!-- LF 16-TS -->
+        <article class="vehicle-card animate-in" style="opacity: 0.85;">
+          <img src="images/fahrzeuge/lf16ts.svg" alt="LF 16-TS - ehemaliges Löschgruppenfahrzeug" class="vehicle-card__image">
+          <div class="vehicle-card__body">
+            <div class="vehicle-card__name">LF 16-TS</div>
+            <div class="vehicle-card__type">Löschgruppenfahrzeug 16 mit Tragkraftspritze</div>
+            <div class="vehicle-card__specs">
+              <div class="vehicle-card__spec">
+                <strong>Status</strong>
+                Außer Dienst
+              </div>
+              <div class="vehicle-card__spec">
+                <strong>Ersetzt durch</strong>
+                GW-T 2 (seit 2021)
+              </div>
+            </div>
+            <p class="card__text">Das LF 16-TS war bis 2021 ein fester Bestandteil unseres Fuhrparks und wurde durch den neuen Gerätewagen Transport (GW-T 2) ersetzt.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mitmachen -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Werde Teil unseres Teams!</h2>
+      <p>Du möchtest dich ehrenamtlich engagieren und anderen helfen? Wir suchen immer engagierte Mitglieder für unsere Einsatzabteilung, den Spielmannszug und die Jugendfeuerwehr.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mitmachen.html" class="btn btn--lg" style="background: white; color: var(--color-primary); border-color: white;">
+          Jetzt informieren
+        </a>
+        <a href="kontakt.html" class="btn btn--outline btn--lg">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Freiwillige Feuerwehr Walddorfhäslach</div>
+          <p class="footer__brand-text">
+            Ehrenamtlich im Einsatz für die Sicherheit der Gemeinde Walddorfhäslach.
+            Rund um die Uhr einsatzbereit.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <div class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="fahrzeuge.html">Fahrzeuge</a>
+            <a href="einsaetze.html">Einsätze</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Abteilungen</h4>
+          <div class="footer__links">
+            <a href="ueber-uns.html#einsatzabteilung">Einsatzabteilung</a>
+            <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+            <a href="ueber-uns.html#spielmannszug">Spielmannszug</a>
+            <a href="mitmachen.html">Mitmachen</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="kontakt.html">Kontakt & Anfahrt</a>
+            <a href="kontakt.html#impressum">Impressum</a>
+            <a href="kontakt.html#datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Freiwillige Feuerwehr Walddorfhäslach</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="kontakt.html#impressum">Impressum</a>
+          <a href="kontakt.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
+        <a href="kontakt.html#datenschutz">Mehr erfahren</a>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn--sm btn--outline" id="cookie-decline" style="color: white; border-color: rgba(255,255,255,0.3);">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="10" fill="#C8102E"/>
+  <g fill="white">
+    <!-- Flamme -->
+    <path d="M24 6c0 0 8 10 8 18a8 8 0 01-16 0c0-8 8-18 8-18z" opacity="0.9"/>
+    <path d="M24 14c0 0 4 6 4 10a4 4 0 01-8 0c0-4 4-10 4-10z" fill="#C8102E"/>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <rect x="0" y="310" width="800" height="90" fill="#2d3748"/>
+  <rect x="0" y="350" width="800" height="3" fill="#718096" opacity="0.4"/>
+  <!-- Fahrzeug-Körper (groß, Aufbau) -->
+  <rect x="120" y="150" width="460" height="160" rx="6" fill="#C8102E"/>
+  <!-- Geräteraum-Klappen -->
+  <rect x="135" y="185" width="80" height="95" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
+  <rect x="225" y="185" width="80" height="95" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
+  <rect x="315" y="185" width="80" height="95" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
+  <!-- Klappengriffe -->
+  <rect x="170" y="230" width="10" height="4" rx="2" fill="#D4D4D8"/>
+  <rect x="260" y="230" width="10" height="4" rx="2" fill="#D4D4D8"/>
+  <rect x="350" y="230" width="10" height="4" rx="2" fill="#D4D4D8"/>
+  <!-- Fahrerkabine -->
+  <rect x="500" y="185" width="120" height="125" rx="6" fill="#9B0B22"/>
+  <rect x="518" y="195" width="82" height="55" rx="4" fill="#63B3ED" opacity="0.7"/>
+  <!-- Dachaufbau / Lichtmast -->
+  <rect x="200" y="135" width="220" height="20" rx="4" fill="#B91C1C"/>
+  <!-- Blaulicht -->
+  <rect x="430" y="138" width="90" height="16" rx="8" fill="#3182CE"/>
+  <circle cx="452" cy="146" r="5" fill="#63B3ED"/>
+  <circle cx="498" cy="146" r="5" fill="#63B3ED"/>
+  <!-- Leiter auf Dach angedeutet -->
+  <rect x="210" y="130" width="180" height="6" rx="2" fill="#A0AEC0" opacity="0.5"/>
+  <!-- HLF Beschriftung -->
+  <text x="270" y="170" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="white">HLF 16/12</text>
+  <!-- Feuerwehr-Streifen -->
+  <rect x="120" y="292" width="500" height="8" fill="#E53E3E"/>
+  <rect x="120" y="304" width="500" height="3" fill="white" opacity="0.3"/>
+  <!-- Räder (Doppelachse hinten) -->
+  <circle cx="210" cy="315" r="32" fill="#1a202c"/>
+  <circle cx="210" cy="315" r="20" fill="#2d3748"/>
+  <circle cx="210" cy="315" r="7" fill="#718096"/>
+  <circle cx="290" cy="315" r="28" fill="#1a202c"/>
+  <circle cx="290" cy="315" r="17" fill="#2d3748"/>
+  <circle cx="290" cy="315" r="6" fill="#718096"/>
+  <circle cx="540" cy="315" r="32" fill="#1a202c"/>
+  <circle cx="540" cy="315" r="20" fill="#2d3748"/>
+  <circle cx="540" cy="315" r="7" fill="#718096"/>
+  <!-- Kennzeichen -->
+  <rect x="535" y="275" width="75" height="20" rx="2" fill="white"/>
+  <text x="572" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#1a202c" text-anchor="middle">RT-WH 112</text>
+  <!-- Label -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" opacity="0.6" text-anchor="middle">Hilfeleistungslöschgruppenfahrzeug | 1.600l Wasser</text>
+</svg>

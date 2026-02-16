@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freiwillige Feuerwehr Walddorfhäslach - Ihre Feuerwehr vor Ort. Einsatzberichte, Termine, Fahrzeuge und mehr.">
+  <meta name="keywords" content="Feuerwehr, Walddorfhäslach, Freiwillige Feuerwehr, Einsätze, Notfall, 112">
+  <meta property="og:title" content="Freiwillige Feuerwehr Walddorfhäslach">
+  <meta property="og:description" content="Ihre Feuerwehr vor Ort - Einsatzberichte, Termine und Neuigkeiten.">
+  <meta property="og:type" content="website">
+  <title>Freiwillige Feuerwehr Walddorfhäslach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <!-- Notfall-Leiste -->
+  <div class="emergency-bar">
+    <div class="container">
+      Notruf: <a href="tel:112">112</a> &nbsp;|&nbsp; Polizei: <a href="tel:110">110</a> &nbsp;|&nbsp; Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" rx="10" fill="#C8102E"/>
+          <path d="M24 8L28 18H36L30 24L32 34L24 28L16 34L18 24L12 18H20L24 8Z" fill="white"/>
+        </svg>
+        <div class="header__logo-text">
+          <span class="header__logo-title">FF Walddorfhäslach</span>
+          <span class="header__logo-subtitle">Freiwillige Feuerwehr</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="nav-close" aria-label="Menü schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" class="nav__link nav__link--active">Startseite</a>
+        <a href="ueber-uns.html" class="nav__link">Über uns</a>
+        <a href="fahrzeuge.html" class="nav__link">Fahrzeuge</a>
+        <a href="einsaetze.html" class="nav__link">Einsätze</a>
+        <a href="jugendfeuerwehr.html" class="nav__link">Jugend</a>
+        <a href="kontakt.html" class="nav__link">Kontakt</a>
+        <a href="mitmachen.html" class="nav__link nav__link--cta">Mitmachen</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image: url('images/hero-feuerwehr.svg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">Seit 1974 für Sie im Einsatz</span>
+        <h1 class="hero__title">
+          Freiwillige Feuerwehr<br>
+          <span>Walddorfhäslach</span>
+        </h1>
+        <p class="hero__text">
+          Rund um die Uhr einsatzbereit für die Sicherheit unserer Gemeinde.
+          Ehrenamtlich. Engagiert. Für Sie da.
+        </p>
+        <div class="hero__actions">
+          <a href="mitmachen.html" class="btn btn--primary btn--lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            Mitmachen
+          </a>
+          <a href="einsaetze.html" class="btn btn--outline btn--lg">
+            Aktuelle Einsätze
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zahlen & Fakten -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="stats">
+        <div class="stat animate-in">
+          <div class="stat__number">50+</div>
+          <div class="stat__label">Aktive Mitglieder</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">5</div>
+          <div class="stat__label">Einsatzfahrzeuge</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">100+</div>
+          <div class="stat__label">Einsätze pro Jahr</div>
+        </div>
+        <div class="stat animate-in">
+          <div class="stat__number">50+</div>
+          <div class="stat__label">Jahre Geschichte</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktuelles / News -->
+  <section class="section" id="aktuelles">
+    <div class="container">
+      <div class="section__header">
+        <h2>Aktuelles</h2>
+        <p>Die neuesten Nachrichten und Berichte unserer Feuerwehr</p>
+      </div>
+
+      <div class="grid grid--3">
+        <!-- News Card 1 -->
+        <article class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Veranstaltung</span>
+            <h3 class="card__title">Feuerwehrfasching 2026</h3>
+            <p class="card__text">Vorverkauf gestartet! Sichert euch jetzt eure Karten für den traditionellen Feuerwehrfasching.</p>
+            <div class="card__meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Januar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- News Card 2 -->
+        <article class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Personal</span>
+            <h3 class="card__title">Neuer Zugführer</h3>
+            <p class="card__text">Herzlichen Glückwunsch zur bestandenen Prüfung an der Landesfeuerwehrschule!</p>
+            <div class="card__meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Dezember 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- News Card 3 -->
+        <article class="card animate-in">
+          <div class="card__image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Bürgerservice</span>
+            <h3 class="card__title">Sandsäcke für Bewohner</h3>
+            <p class="card__text">Sandsäcke stehen im Feuerwehrhaus zur Abholung bereit. Bitte bei Bedarf melden.</p>
+            <div class="card__meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>November 2025</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notfallnummern -->
+  <section class="emergency-strip">
+    <div class="container">
+      <div class="emergency-strip__inner">
+        <a href="tel:112" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">112</div>
+            <div class="emergency-item__label">Feuerwehr & Rettungsdienst</div>
+          </div>
+        </a>
+        <a href="tel:110" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">110</div>
+            <div class="emergency-item__label">Polizei</div>
+          </div>
+        </a>
+        <a href="tel:116117" class="emergency-item">
+          <div>
+            <div class="emergency-item__number">116 117</div>
+            <div class="emergency-item__label">Ärztlicher Bereitschaftsdienst</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns Kurzvorstellung -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Wer wir sind</h2>
+        <p>Die Freiwillige Feuerwehr Walddorfhäslach - ehrenamtlich engagiert seit 1974</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="feature-card__title">Einsatzabteilung</h3>
+          <p class="feature-card__text">Über 50 aktive Kameradinnen und Kameraden sind rund um die Uhr einsatzbereit für Brandschutz und technische Hilfeleistung.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </div>
+          <h3 class="feature-card__title">Spielmannszug</h3>
+          <p class="feature-card__text">Seit 1967 bereichert der Spielmannszug Häslach das kulturelle Leben der Gemeinde mit musikalischen Auftritten.</p>
+        </div>
+
+        <div class="feature-card animate-in">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="feature-card__title">Jugendfeuerwehr</h3>
+          <p class="feature-card__text">Unser Nachwuchs lernt spielerisch den Umgang mit Feuerwehrtechnik und Teamarbeit - für die Feuerwehr von morgen.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-2xl">
+        <a href="ueber-uns.html" class="btn btn--outline-dark">Mehr über uns erfahren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Feed -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Folgt uns</h2>
+        <p>Aktuelle Einblicke und Neuigkeiten auf unseren Social-Media-Kanälen</p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Facebook Feed -->
+        <div class="social-feed">
+          <div class="social-feed__header">
+            <div class="social-feed__title">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </div>
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--secondary">
+              Zur Seite
+            </a>
+          </div>
+          <div id="fb-feed">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFeuerwehrWalddorfhaeslach&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true" width="100%" height="500" style="border:none;overflow:hidden;border-radius:8px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- Instagram Hinweis -->
+        <div class="social-feed">
+          <div class="social-feed__header">
+            <div class="social-feed__title">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="color: #E4405F;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
+            </div>
+          </div>
+          <div style="text-align: center; padding: 3rem 2rem;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="1" style="margin-bottom: 1.5rem;">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            <h3 style="margin-bottom: 0.5rem;">Folgt uns auf Instagram</h3>
+            <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">Bilder von Einsätzen, Übungen und Veranstaltungen</p>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram öffnen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mitmachen -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Werde Teil unseres Teams!</h2>
+      <p>Du möchtest dich ehrenamtlich engagieren und anderen helfen? Wir suchen immer engagierte Mitglieder für unsere Einsatzabteilung, den Spielmannszug und die Jugendfeuerwehr.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mitmachen.html" class="btn btn--lg" style="background: white; color: var(--color-primary); border-color: white;">
+          Jetzt informieren
+        </a>
+        <a href="kontakt.html" class="btn btn--outline btn--lg">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Freiwillige Feuerwehr Walddorfhäslach</div>
+          <p class="footer__brand-text">
+            Ehrenamtlich im Einsatz für die Sicherheit der Gemeinde Walddorfhäslach.
+            Rund um die Uhr einsatzbereit.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/FeuerwehrWalddorfhaeslach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <div class="footer__links">
+            <a href="index.html">Startseite</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="fahrzeuge.html">Fahrzeuge</a>
+            <a href="einsaetze.html">Einsätze</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Abteilungen</h4>
+          <div class="footer__links">
+            <a href="ueber-uns.html#einsatzabteilung">Einsatzabteilung</a>
+            <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+            <a href="ueber-uns.html#spielmannszug">Spielmannszug</a>
+            <a href="mitmachen.html">Mitmachen</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="kontakt.html">Kontakt & Anfahrt</a>
+            <a href="kontakt.html#impressum">Impressum</a>
+            <a href="kontakt.html#datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Freiwillige Feuerwehr Walddorfhäslach</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="kontakt.html#impressum">Impressum</a>
+          <a href="kontakt.html#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
+        <a href="kontakt.html#datenschutz">Mehr erfahren</a>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--primary" id="cookie-accept">Akzeptieren</button>
+        <button class="btn btn--sm btn--outline" id="cookie-decline" style="color: white; border-color: rgba(255,255,255,0.3);">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
