@@ -1,53 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#831843"/>
-      <stop offset="100%" stop-color="#9f1239"/>
-    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87CEEB"/><stop offset="100%" stop-color="#E0F0FF"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8102E"/><stop offset="40%" stop-color="#C8102E"/><stop offset="100%" stop-color="#A00D24"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#B8D8F0"/><stop offset="50%" stop-color="#7CB8DE"/><stop offset="100%" stop-color="#5A9DC5"/></linearGradient>
+    <linearGradient id="chr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8E8E8"/><stop offset="50%" stop-color="#C0C0C0"/><stop offset="100%" stop-color="#A0A0A0"/></linearGradient>
+    <linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#808080"/><stop offset="100%" stop-color="#606060"/></linearGradient>
+    <filter id="sh"><feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#00000040"/></filter>
   </defs>
-  <rect width="800" height="400" fill="url(#bg)"/>
-  <rect x="0" y="310" width="800" height="90" fill="#2d3748"/>
-  <rect x="0" y="350" width="800" height="3" fill="#718096" opacity="0.4"/>
-  <!-- Fahrzeug-Körper -->
-  <rect x="130" y="150" width="450" height="160" rx="6" fill="#C8102E"/>
-  <!-- Geräteraum-Klappen -->
-  <rect x="145" y="190" width="90" height="90" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
-  <rect x="245" y="190" width="90" height="90" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
-  <rect x="345" y="190" width="70" height="90" rx="2" fill="#B91C1C" stroke="#991B1B" stroke-width="1"/>
-  <!-- Klappengriffe -->
-  <rect x="185" y="232" width="10" height="4" rx="2" fill="#D4D4D8"/>
-  <rect x="285" y="232" width="10" height="4" rx="2" fill="#D4D4D8"/>
-  <rect x="375" y="232" width="10" height="4" rx="2" fill="#D4D4D8"/>
-  <!-- Fahrerkabine -->
-  <rect x="500" y="185" width="120" height="125" rx="6" fill="#9B0B22"/>
-  <rect x="518" y="195" width="82" height="55" rx="4" fill="#63B3ED" opacity="0.7"/>
-  <!-- Dachaufbau -->
-  <rect x="200" y="138" width="200" height="16" rx="4" fill="#B91C1C"/>
-  <!-- Blaulicht -->
-  <rect x="440" y="138" width="90" height="16" rx="8" fill="#3182CE"/>
-  <circle cx="462" cy="146" r="5" fill="#63B3ED"/>
-  <circle cx="508" cy="146" r="5" fill="#63B3ED"/>
-  <!-- Schlauchtragekorb auf Dach -->
-  <rect x="220" y="128" width="60" height="14" rx="3" fill="#A0AEC0" opacity="0.4"/>
-  <rect x="300" y="128" width="60" height="14" rx="3" fill="#A0AEC0" opacity="0.4"/>
-  <!-- LF 20 Beschriftung -->
-  <text x="280" y="175" font-family="Arial, sans-serif" font-weight="bold" font-size="26" fill="white">LF 20</text>
-  <!-- Feuerwehr-Streifen -->
-  <rect x="130" y="292" width="490" height="8" fill="#E53E3E"/>
-  <rect x="130" y="304" width="490" height="3" fill="white" opacity="0.3"/>
-  <!-- Räder -->
-  <circle cx="220" cy="315" r="32" fill="#1a202c"/>
-  <circle cx="220" cy="315" r="20" fill="#2d3748"/>
-  <circle cx="220" cy="315" r="7" fill="#718096"/>
-  <circle cx="310" cy="315" r="28" fill="#1a202c"/>
-  <circle cx="310" cy="315" r="17" fill="#2d3748"/>
-  <circle cx="310" cy="315" r="6" fill="#718096"/>
-  <circle cx="545" cy="315" r="32" fill="#1a202c"/>
-  <circle cx="545" cy="315" r="20" fill="#2d3748"/>
-  <circle cx="545" cy="315" r="7" fill="#718096"/>
-  <!-- Kennzeichen -->
-  <rect x="535" y="275" width="80" height="20" rx="2" fill="white"/>
-  <text x="575" y="290" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#1a202c" text-anchor="middle">RT-WH 1442</text>
-  <!-- Label -->
-  <text x="400" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" opacity="0.6" text-anchor="middle">Löschgruppenfahrzeug 20 | Staffelbesatzung 1/8</text>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <rect x="0" y="395" width="800" height="105" fill="url(#gnd)"/>
+  <rect x="0" y="395" width="800" height="3" fill="#909090"/>
+  <g filter="url(#sh)">
+    <rect x="90" y="348" width="540" height="18" rx="3" fill="#3D3D3D"/>
+    <rect x="95" y="148" width="390" height="205" rx="4" fill="url(#body)"/>
+    <rect x="100" y="138" width="380" height="14" rx="3" fill="#B80D23"/>
+    <rect x="120" y="125" width="80" height="16" rx="4" fill="#999" opacity="0.5"/>
+    <rect x="220" y="125" width="80" height="16" rx="4" fill="#999" opacity="0.5"/>
+    <rect x="320" y="125" width="70" height="16" rx="4" fill="#999" opacity="0.5"/>
+    <rect x="105" y="195" width="90" height="115" rx="2" fill="#A50D20" stroke="#8B0A1A" stroke-width="1"/>
+    <rect x="205" y="195" width="90" height="115" rx="2" fill="#A50D20" stroke="#8B0A1A" stroke-width="1"/>
+    <rect x="305" y="195" width="85" height="115" rx="2" fill="#A50D20" stroke="#8B0A1A" stroke-width="1"/>
+    <rect x="400" y="195" width="80" height="115" rx="2" fill="#A50D20" stroke="#8B0A1A" stroke-width="1"/>
+    <line x1="108" y1="220" x2="192" y2="220" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="108" y1="245" x2="192" y2="245" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="108" y1="270" x2="192" y2="270" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="208" y1="220" x2="292" y2="220" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="208" y1="245" x2="292" y2="245" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="308" y1="220" x2="387" y2="220" stroke="#900D1C" stroke-width="0.5"/>
+    <line x1="308" y1="245" x2="387" y2="245" stroke="#900D1C" stroke-width="0.5"/>
+    <rect x="144" y="258" width="14" height="5" rx="2" fill="url(#chr)"/>
+    <rect x="244" y="258" width="14" height="5" rx="2" fill="url(#chr)"/>
+    <rect x="342" y="258" width="14" height="5" rx="2" fill="url(#chr)"/>
+    <rect x="434" y="258" width="14" height="5" rx="2" fill="url(#chr)"/>
+    <path d="M485,175 L485,360 L630,360 L630,230 Q630,210 615,200 L540,178 L485,175 Z" fill="url(#body)"/>
+    <path d="M485,175 L540,163 Q575,158 608,175 L630,200 Q625,180 615,175 L490,175 Z" fill="#B80D23"/>
+    <path d="M544,178 L596,178 Q616,180 623,205 L626,238 L537,238 L537,195 Q537,178 544,178 Z" fill="url(#glass)" stroke="#555" stroke-width="1.5"/>
+    <line x1="582" y1="178" x2="582" y2="238" stroke="#666" stroke-width="1.5"/>
+    <rect x="493" y="200" width="38" height="38" rx="3" fill="url(#glass)" stroke="#555" stroke-width="1"/>
+    <rect x="95" y="320" width="535" height="12" fill="#FFD700" opacity="0.9"/>
+    <rect x="95" y="334" width="535" height="5" fill="white" opacity="0.6"/>
+    <rect x="95" y="341" width="535" height="3" fill="#FFD700" opacity="0.7"/>
+    <text x="290" y="172" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="white" text-anchor="middle" letter-spacing="3">FEUERWEHR</text>
+    <text x="260" y="340" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="white">LF 20</text>
+    <rect x="475" y="155" width="110" height="18" rx="9" fill="#2255AA" stroke="#1A4488" stroke-width="1"/>
+    <circle cx="498" cy="164" r="6" fill="#4488EE"/><circle cx="518" cy="164" r="6" fill="#3377DD"/>
+    <circle cx="538" cy="164" r="6" fill="#4488EE"/><circle cx="558" cy="164" r="6" fill="#3377DD"/>
+    <circle cx="103" cy="328" r="10" fill="#888" stroke="#666" stroke-width="1"/>
+    <circle cx="103" cy="328" r="5" fill="#AAA"/>
+    <ellipse cx="627" cy="265" rx="12" ry="10" fill="#FFFFDD" stroke="#888" stroke-width="1"/>
+    <rect x="623" y="280" width="10" height="6" rx="2" fill="#FFB800"/>
+    <rect x="634" y="205" width="20" height="30" rx="3" fill="#333"/>
+    <rect x="637" y="208" width="14" height="24" rx="2" fill="#7CB8DE" opacity="0.5"/>
+    <rect x="90" y="358" width="545" height="14" rx="3" fill="#444"/>
+    <rect x="570" y="360" width="52" height="12" rx="1" fill="white" stroke="#333" stroke-width="0.5"/>
+    <rect x="570" y="360" width="8" height="12" fill="#003399"/>
+    <text x="596" y="370" font-family="Arial, sans-serif" font-weight="bold" font-size="7" fill="#1a1a1a" text-anchor="middle">RT-WH 1442</text>
+  </g>
+  <circle cx="185" cy="382" r="42" fill="#1A1A1A"/><circle cx="185" cy="382" r="36" fill="#222" stroke="#2D2D2D" stroke-width="3"/>
+  <circle cx="185" cy="382" r="18" fill="#888"/><circle cx="185" cy="382" r="14" fill="#999"/><circle cx="185" cy="382" r="4" fill="#777"/>
+  <circle cx="285" cy="382" r="36" fill="#1A1A1A"/><circle cx="285" cy="382" r="30" fill="#222" stroke="#2D2D2D" stroke-width="3"/>
+  <circle cx="285" cy="382" r="15" fill="#888"/><circle cx="285" cy="382" r="11" fill="#999"/><circle cx="285" cy="382" r="4" fill="#777"/>
+  <circle cx="565" cy="382" r="42" fill="#1A1A1A"/><circle cx="565" cy="382" r="36" fill="#222" stroke="#2D2D2D" stroke-width="3"/>
+  <circle cx="565" cy="382" r="18" fill="#888"/><circle cx="565" cy="382" r="14" fill="#999"/><circle cx="565" cy="382" r="4" fill="#777"/>
+  <ellipse cx="385" cy="418" rx="280" ry="12" fill="#00000025"/>
+  <text x="400" y="460" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="16" fill="#444" text-anchor="middle">LF 20 (1/44) - RT-WH 1442</text>
+  <text x="400" y="480" font-family="Inter, Arial, sans-serif" font-weight="400" font-size="13" fill="#777" text-anchor="middle">Loeschgruppenfahrzeug 20 - Staffelbesatzung 1/8 - Florian Walddorfhaeslach 1/44</text>
 </svg>
