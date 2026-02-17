@@ -7,7 +7,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(del \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\elw1.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\gwt2.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\hlf.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\lf20.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\mtw.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\fahrzeuge\\\\lf16ts.svg\" \"c:\\\\Repo\\\\FFWHP\\\\images\\\\hero-feuerwehr.svg\")",
+      "Bash(git status:*)"
     ]
   }
 }
