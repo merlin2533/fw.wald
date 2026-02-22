@@ -241,16 +241,13 @@ function initTabListeners() {
 
 // Generiere Tab-Content-Container dynamisch
 function generateTabContents(byYear) {
-  // Finde den Container-Bereich
-  const section = document.querySelector('.section .container');
-  if (!section) return;
-
-  // Finde die Tabs
-  const tabsDiv = section.querySelector('.tabs');
+  // Finde die Tabs direkt (eindeutiger Selektor)
+  const tabsDiv = document.querySelector('.tabs[role="tablist"]');
   if (!tabsDiv) return;
 
   // Entferne alle existierenden Tab-Contents
-  const existingContents = section.querySelectorAll('.tab-content');
+  const container = tabsDiv.parentNode;
+  const existingContents = container.querySelectorAll('.tab-content');
   existingContents.forEach(content => content.remove());
 
   // Sortiere Jahre absteigend
