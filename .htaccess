@@ -1,21 +1,18 @@
 # Apache Configuration für FF Walddorfhäslach Backend
 
 # Aktiviere Rewrite-Engine
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# API-Requests an api/index.php weiterleiten
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^api/(.*)$ api/index.php [L,QSA]
+    # API-Requests an api/index.php weiterleiten
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/(.*)$ /api/index.php [L,QSA]
+</IfModule>
 
 # DirectoryIndex für Admin-Panel
 DirectoryIndex index.html admin.html
-
-# PHP-Einstellungen
-php_value upload_max_filesize 5M
-php_value post_max_size 6M
-php_value max_execution_time 30
-php_value memory_limit 128M
 
 # MIME-Types für Bilder
 AddType image/jpeg .jpg .jpeg
