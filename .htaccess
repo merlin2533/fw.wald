@@ -1,0 +1,53 @@
+# Apache Configuration für FF Walddorfhäslach Backend
+
+# Aktiviere Rewrite-Engine
+RewriteEngine On
+
+# API-Requests an api/index.php weiterleiten
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.*)$ api/index.php [L,QSA]
+
+# DirectoryIndex für Admin-Panel
+DirectoryIndex index.html admin.html
+
+# PHP-Einstellungen
+php_value upload_max_filesize 5M
+php_value post_max_size 6M
+php_value max_execution_time 30
+php_value memory_limit 128M
+
+# MIME-Types für Bilder
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
+AddType image/webp .webp
+
+# Gzip-Kompression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser-Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Sicherheit
+<Files ".ht*">
+    Require all denied
+</Files>
+
+# Verhindere Directory Listing
+Options -Indexes
+
+# SQLite-Datenbank schützen
+<FilesMatch "\.db$">
+    Require all denied
+</FilesMatch>
