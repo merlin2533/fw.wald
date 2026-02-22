@@ -267,24 +267,30 @@ function generateTabContents(byYear) {
 // Lade alle Einsätze
 async function loadEinsaetze() {
   try {
-    console.log('🔄 Lade Einsätze...');
     const response = await fetch('/api/einsaetze');
-    console.log('📡 API Response Status:', response.status);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
     const einsaetze = await response.json();
-    console.log('📊 Geladene Einsätze:', einsaetze.length, einsaetze);
+
+    if (einsaetze.length === 0) {
+      // Zeige leere Nachricht an
+      document.querySelector('.tabs[role="tablist"]').innerHTML = '';
+      return;
+    }
+
+    // Berechne Statistiken und gruppiere nach Jahr (nur einmal!)
+    const { byYear, byCategory } = calculateStats(einsaetze);
+
+    // Sortiere Einsätze innerhalb jedes Jahres nach Datum (neueste zuerst)
+    Object.keys(byYear).forEach(year => {
+      byYear[year].sort((a, b) => new Date(b.date) - new Date(a.date));
+    });
 
     // Aktualisiere Statistiken
     updateStats(einsaetze);
-
-    // Gruppiere nach Jahr
-    const byYear = {};
-    einsaetze.forEach(einsatz => {
-      const year = new Date(einsatz.date).getFullYear();
-      if (!byYear[year]) {
-        byYear[year] = [];
-      }
-      byYear[year].push(einsatz);
-    });
 
     // Generiere Tabs und Contents dynamisch
     generateYearTabs(byYear);
@@ -308,6 +314,22 @@ async function loadEinsaetze() {
 
   } catch (error) {
     console.error('Fehler beim Laden der Einsätze:', error);
+
+    // Zeige Fehlermeldung an
+    const tabsContainer = document.querySelector('.tabs[role="tablist"]');
+    if (tabsContainer && tabsContainer.parentNode) {
+      tabsContainer.parentNode.innerHTML = `
+        <div style="text-align: center; padding: 60px 20px; color: #666;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 20px; opacity: 0.5;">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Fehler beim Laden der Einsätze</h3>
+          <p style="color: #999;">Bitte versuchen Sie es später erneut oder kontaktieren Sie den Administrator.</p>
+        </div>
+      `;
+    }
   }
 }
 
