@@ -11,3 +11,12 @@ desktop.ini
 *.tmp
 nul
 asdf
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Backend Data
+data/
+images/uploads/

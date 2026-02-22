@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - FF Walddorfhäslach</title>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #C8102E;
+      --primary-dark: #A00D25;
+      --bg: #f5f5f5;
+      --card-bg: #fff;
+      --text: #333;
+      --border: #ddd;
+      --success: #28a745;
+      --danger: #dc3545;
+      --warning: #ffc107;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Login Screen */
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 15px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+    }
+
+    .login-header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .login-header p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    details {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    details summary {
+      user-select: none;
+      outline: none;
+    }
+
+    details summary:hover {
+      color: var(--primary-dark);
+    }
+
+    details[open] summary {
+      margin-bottom: 15px;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+
+    /* Admin Layout */
+    .admin-layout {
+      display: none;
+    }
+
+    .admin-header {
+      background: var(--card-bg);
+      border-bottom: 2px solid var(--primary);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-header h1 {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .admin-header h1 span {
+      font-size: 24px;
+    }
+
+    .admin-nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .admin-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 12px 24px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #666;
+      transition: all 0.3s;
+    }
+
+    .tab:hover {
+      color: var(--primary);
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-header h2 {
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px dashed var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .file-preview {
+      margin-top: 10px;
+      max-width: 300px;
+    }
+
+    .file-preview img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .btn-success:hover {
+      opacity: 0.9;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg);
+    }
+
+    .item-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .item {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .item-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .item-content {
+      flex: 1;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .item-meta {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .item-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .item-actions .btn {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    .alert {
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .alert-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-danger {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .alert-warning {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #999;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    .editor-container {
+      height: 300px;
+      background: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .badge-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .badge-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .badge-warning {
+      background: var(--warning);
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .admin-container {
+        padding: 15px;
+      }
+
+      .item {
+        flex-direction: column;
+      }
+
+      .item-image {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div class="login-container" id="loginScreen">
+    <div class="login-box">
+      <div class="login-header">
+        <div class="login-logo">🚒</div>
+        <h1>Admin Panel</h1>
+        <p>Feuerwehr Walddorfhäslach</p>
+      </div>
+      <div id="loginAlert"></div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Benutzername</label>
+          <input type="text" id="username" name="username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Passwort</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Anmelden
+        </button>
+      </form>
+
+      <!-- Dokumentation -->
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border);">
+        <details>
+          <summary style="cursor: pointer; font-weight: 600; margin-bottom: 10px; color: var(--primary);">
+            📖 Schnellstart-Anleitung
+          </summary>
+          <div style="font-size: 13px; line-height: 1.8; color: #666;">
+            <h3 style="font-size: 14px; margin: 15px 0 10px; color: var(--text);">🔐 Standard-Login</h3>
+            <p style="margin: 5px 0;">
+              <strong>Benutzername:</strong> <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">admin</code><br>
+              <strong>Passwort:</strong> <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">Feuerwehr112!</code>
+            </p>
+
+            <h3 style="font-size: 14px; margin: 15px 0 10px; color: var(--text);">✨ Funktionen</h3>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+              <li><strong>Aktuelles:</strong> Max. 3 News-Einträge mit Bild & Text</li>
+              <li><strong>Einsätze:</strong> Einsatzberichte hinzufügen und verwalten</li>
+              <li><strong>Fahrzeuge:</strong> Fahrzeugdaten und -bilder pflegen</li>
+            </ul>
+
+            <h3 style="font-size: 14px; margin: 15px 0 10px; color: var(--text);">📝 Verwendung</h3>
+            <ol style="margin: 5px 0; padding-left: 20px;">
+              <li>Mit den Login-Daten oben anmelden</li>
+              <li>Gewünschten Tab wählen (Aktuelles/Einsätze/Fahrzeuge)</li>
+              <li>Auf "+ Neu" klicken zum Erstellen</li>
+              <li>Formular ausfüllen und Bild hochladen (optional)</li>
+              <li>Speichern - Fertig!</li>
+            </ol>
+
+            <h3 style="font-size: 14px; margin: 15px 0 10px; color: var(--text);">💡 Tipps</h3>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+              <li>Bildgröße: Max. 5 MB (JPEG, PNG, GIF, WebP)</li>
+              <li>Editor: Formatierung mit den Werkzeugen oben</li>
+              <li>Aktuelles: Begrenzt auf 3 Einträge - älteste ggf. löschen</li>
+            </ul>
+
+            <div style="margin-top: 15px; padding: 10px; background: #f0f8ff; border-left: 3px solid var(--primary); border-radius: 4px;">
+              <strong>ℹ️ Vollständige Dokumentation:</strong><br>
+              Siehe <code style="background: white; padding: 2px 6px; border-radius: 3px;">README-BACKEND.md</code> im Projektordner
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout" id="adminLayout">
+    <div class="admin-header">
+      <h1><span>🚒</span> FF Walddorfhäslach - Admin Panel</h1>
+      <div class="admin-nav">
+        <button class="btn btn-outline" onclick="window.open('index.html', '_blank')">🌐 Zur Website</button>
+        <button class="btn btn-danger" onclick="logout()">Abmelden</button>
+      </div>
+    </div>
+
+    <div class="admin-container">
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('aktuelles')">Aktuelles</button>
+        <button class="tab" onclick="switchTab('einsaetze')">Einsätze</button>
+        <button class="tab" onclick="switchTab('fahrzeuge')">Fahrzeuge</button>
+      </div>
+
+      <!-- Aktuelles Tab -->
+      <div class="tab-content active" id="aktuelles-tab">
+        <div class="card">
+          <div class="card-header">
+            <h2>Aktuelles verwalten</h2>
+            <button class="btn btn-primary" onclick="openAktuellesModal()">+ Neuer Eintrag</button>
+          </div>
+          <div id="aktuellesAlert"></div>
+          <div id="aktuellesList" class="item-list"></div>
+        </div>
+      </div>
+
+      <!-- Einsätze Tab -->
+      <div class="tab-content" id="einsaetze-tab">
+        <div class="card">
+          <div class="card-header">
+            <h2>Einsätze verwalten</h2>
+            <button class="btn btn-primary" onclick="openEinsatzModal()">+ Neuer Einsatz</button>
+          </div>
+          <div id="einsaetzeAlert"></div>
+          <div id="einsaetzeList" class="item-list"></div>
+        </div>
+      </div>
+
+      <!-- Fahrzeuge Tab -->
+      <div class="tab-content" id="fahrzeuge-tab">
+        <div class="card">
+          <div class="card-header">
+            <h2>Fahrzeuge verwalten</h2>
+            <button class="btn btn-primary" onclick="openFahrzeugModal()">+ Neues Fahrzeug</button>
+          </div>
+          <div id="fahrzeugeAlert"></div>
+          <div id="fahrzeugeList" class="item-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aktuelles Modal -->
+  <div class="modal" id="aktuellesModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="aktuellesModalTitle">Aktuelles erstellen</h2>
+        <button class="modal-close" onclick="closeAktuellesModal()">&times;</button>
+      </div>
+      <form id="aktuellesForm">
+        <input type="hidden" id="aktuelles-id">
+        <div class="form-group">
+          <label for="aktuelles-title">Titel *</label>
+          <input type="text" id="aktuelles-title" required>
+        </div>
+        <div class="form-group">
+          <label for="aktuelles-content">Inhalt *</label>
+          <div id="aktuelles-editor" class="editor-container"></div>
+        </div>
+        <div class="form-group">
+          <label for="aktuelles-image">Bild</label>
+          <input type="file" id="aktuelles-image" accept="image/*">
+          <div id="aktuelles-preview" class="file-preview"></div>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+          <button type="button" class="btn btn-outline" onclick="closeAktuellesModal()">Abbrechen</button>
+          <button type="submit" class="btn btn-primary">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Einsatz Modal -->
+  <div class="modal" id="einsatzModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="einsatzModalTitle">Einsatz erstellen</h2>
+        <button class="modal-close" onclick="closeEinsatzModal()">&times;</button>
+      </div>
+      <form id="einsatzForm">
+        <input type="hidden" id="einsatz-id">
+        <div class="form-group">
+          <label for="einsatz-title">Titel *</label>
+          <input type="text" id="einsatz-title" required>
+        </div>
+        <div class="form-group">
+          <label for="einsatz-date">Datum & Uhrzeit *</label>
+          <input type="datetime-local" id="einsatz-date" required>
+        </div>
+        <div class="form-group">
+          <label for="einsatz-category">Kategorie *</label>
+          <select id="einsatz-category" required>
+            <option value="Brandeinsatz">Brandeinsatz</option>
+            <option value="Technische Hilfeleistung">Technische Hilfeleistung</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="einsatz-location">Einsatzort</label>
+          <input type="text" id="einsatz-location">
+        </div>
+        <div class="form-group">
+          <label for="einsatz-description">Beschreibung *</label>
+          <div id="einsatz-editor" class="editor-container"></div>
+        </div>
+        <div class="form-group">
+          <label for="einsatz-vehicles">Fahrzeuge (z.B. HLF 16/12, ELW 1)</label>
+          <input type="text" id="einsatz-vehicles">
+        </div>
+        <div class="form-group">
+          <label for="einsatz-personnel">Anzahl Einsatzkräfte</label>
+          <input type="number" id="einsatz-personnel">
+        </div>
+        <div class="form-group">
+          <label for="einsatz-image">Bild</label>
+          <input type="file" id="einsatz-image" accept="image/*">
+          <div id="einsatz-preview" class="file-preview"></div>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+          <button type="button" class="btn btn-outline" onclick="closeEinsatzModal()">Abbrechen</button>
+          <button type="submit" class="btn btn-primary">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Fahrzeug Modal -->
+  <div class="modal" id="fahrzeugModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="fahrzeugModalTitle">Fahrzeug erstellen</h2>
+        <button class="modal-close" onclick="closeFahrzeugModal()">&times;</button>
+      </div>
+      <form id="fahrzeugForm">
+        <input type="hidden" id="fahrzeug-id">
+        <div class="form-group">
+          <label for="fahrzeug-name">Fahrzeugname *</label>
+          <input type="text" id="fahrzeug-name" placeholder="z.B. HLF 16/12" required>
+        </div>
+        <div class="form-group">
+          <label for="fahrzeug-type">Fahrzeugtyp *</label>
+          <input type="text" id="fahrzeug-type" placeholder="z.B. Hilfeleistungslöschgruppenfahrzeug" required>
+        </div>
+        <div class="form-group">
+          <label for="fahrzeug-description">Beschreibung *</label>
+          <div id="fahrzeug-editor" class="editor-container"></div>
+        </div>
+        <div class="form-group">
+          <label for="fahrzeug-image">Bild *</label>
+          <input type="file" id="fahrzeug-image" accept="image/*">
+          <div id="fahrzeug-preview" class="file-preview"></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <div class="form-group">
+            <label for="fahrzeug-year">Baujahr</label>
+            <input type="number" id="fahrzeug-year" placeholder="z.B. 2015">
+          </div>
+          <div class="form-group">
+            <label for="fahrzeug-crew">Besatzung</label>
+            <input type="number" id="fahrzeug-crew" placeholder="z.B. 9">
+          </div>
+          <div class="form-group">
+            <label for="fahrzeug-water">Wassertank (Liter)</label>
+            <input type="number" id="fahrzeug-water" placeholder="z.B. 1600">
+          </div>
+          <div class="form-group">
+            <label for="fahrzeug-pump">Pumpenleistung</label>
+            <input type="text" id="fahrzeug-pump" placeholder="z.B. 1600 l/min">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fahrzeug-equipment">Sonderausstattung</label>
+          <textarea id="fahrzeug-equipment" rows="3" placeholder="z.B. Rettungssatz, Stromerzeuger, ..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="fahrzeug-sort">Sortierreihenfolge</label>
+          <input type="number" id="fahrzeug-sort" value="0">
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+          <button type="button" class="btn btn-outline" onclick="closeFahrzeugModal()">Abbrechen</button>
+          <button type="submit" class="btn btn-primary">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
