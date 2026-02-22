@@ -195,42 +195,78 @@ function generateYearTabs(byYear) {
   `).join('');
 }
 
+// Aktiviere einen Tab (zentrale Funktion)
+function activateTab(tab) {
+  const tabs = document.querySelectorAll('.tab[data-tab]');
+  const tabContents = document.querySelectorAll('.tab-content[data-tab-content]');
+  const targetYear = tab.getAttribute('data-tab');
+
+  // Alle Tabs deaktivieren
+  tabs.forEach(function(t) {
+    t.classList.remove('tab--active');
+    t.setAttribute('aria-selected', 'false');
+  });
+
+  // Alle Inhalte ausblenden
+  tabContents.forEach(function(content) {
+    content.classList.remove('tab-content--active');
+  });
+
+  // Ausgewählten Tab und Inhalt aktivieren
+  tab.classList.add('tab--active');
+  tab.setAttribute('aria-selected', 'true');
+  tab.focus();
+
+  const targetContent = document.querySelector('.tab-content[data-tab-content="' + targetYear + '"]');
+  if (targetContent) {
+    targetContent.classList.add('tab-content--active');
+
+    // Animationen erneut auslösen
+    const animateItems = targetContent.querySelectorAll('.animate-in');
+    animateItems.forEach(function(item, index) {
+      item.classList.remove('animate-in--visible');
+      setTimeout(function() {
+        item.classList.add('animate-in--visible');
+      }, index * 100);
+    });
+  }
+}
+
 // Initialisiere Tab-Event-Listener
 function initTabListeners() {
   const tabs = document.querySelectorAll('.tab[data-tab]');
-  const tabContents = document.querySelectorAll('.tab-content[data-tab-content]');
+  const tabsArray = Array.from(tabs);
 
-  tabs.forEach(function(tab) {
+  tabs.forEach(function(tab, index) {
+    // Click Event
     tab.addEventListener('click', function() {
-      const targetYear = this.getAttribute('data-tab');
+      activateTab(this);
+    });
 
-      // Alle Tabs deaktivieren
-      tabs.forEach(function(t) {
-        t.classList.remove('tab--active');
-        t.setAttribute('aria-selected', 'false');
-      });
+    // Keyboard Navigation (← → Pfeiltasten)
+    tab.addEventListener('keydown', function(e) {
+      let targetTab = null;
 
-      // Alle Inhalte ausblenden
-      tabContents.forEach(function(content) {
-        content.classList.remove('tab-content--active');
-      });
+      if (e.key === 'ArrowLeft') {
+        // Vorheriger Tab
+        e.preventDefault();
+        targetTab = tabsArray[index - 1] || tabsArray[tabsArray.length - 1];
+      } else if (e.key === 'ArrowRight') {
+        // Nächster Tab
+        e.preventDefault();
+        targetTab = tabsArray[index + 1] || tabsArray[0];
+      } else if (e.key === 'Home') {
+        // Erster Tab
+        e.preventDefault();
+        targetTab = tabsArray[0];
+      } else if (e.key === 'End') {
+        // Letzter Tab
+        e.preventDefault();
+        targetTab = tabsArray[tabsArray.length - 1];
+      }
 
-      // Ausgewählten Tab und Inhalt aktivieren
-      this.classList.add('tab--active');
-      this.setAttribute('aria-selected', 'true');
-
-      const targetContent = document.querySelector('.tab-content[data-tab-content="' + targetYear + '"]');
-      if (targetContent) {
-        targetContent.classList.add('tab-content--active');
-
-        // Animationen erneut auslösen
-        const animateItems = targetContent.querySelectorAll('.animate-in');
-        animateItems.forEach(function(item, index) {
-          item.classList.remove('animate-in--visible');
-          setTimeout(function() {
-            item.classList.add('animate-in--visible');
-          }, index * 100);
-        });
+      if (targetTab) {
+        activateTab(targetTab);
       }
     });
   });
@@ -264,8 +300,44 @@ function generateTabContents(byYear) {
   });
 }
 
+// Zeige Lade-Skeleton
+function showLoadingSkeleton() {
+  const tabsContainer = document.querySelector('.tabs[role="tablist"]');
+  if (!tabsContainer) return;
+
+  // Skeleton für Tabs
+  tabsContainer.innerHTML = `
+    <div class="tab" style="background: #f0f0f0; color: transparent; cursor: default;">2026</div>
+    <div class="tab" style="background: #f0f0f0; color: transparent; cursor: default;">2025</div>
+    <div class="tab" style="background: #f0f0f0; color: transparent; cursor: default;">2024</div>
+  `;
+
+  // Skeleton für Content
+  const container = tabsContainer.parentNode;
+  const existingContents = container.querySelectorAll('.tab-content');
+  existingContents.forEach(content => content.remove());
+
+  const skeletonContent = document.createElement('div');
+  skeletonContent.className = 'tab-content tab-content--active';
+  skeletonContent.innerHTML = `
+    ${Array(3).fill('').map(() => `
+      <div class="operation-item" style="opacity: 0.6; pointer-events: none;">
+        <div class="operation-item__icon" style="background: #f0f0f0;"></div>
+        <div class="operation-item__content">
+          <div style="height: 20px; background: #f0f0f0; border-radius: 4px; margin-bottom: 8px; width: 70%;"></div>
+          <div style="height: 16px; background: #f0f0f0; border-radius: 4px; width: 40%;"></div>
+        </div>
+      </div>
+    `).join('')}
+  `;
+  container.appendChild(skeletonContent);
+}
+
 // Lade alle Einsätze
 async function loadEinsaetze() {
+  // Zeige Lade-Skeleton
+  showLoadingSkeleton();
+
   try {
     const response = await fetch('/api/einsaetze');
 
