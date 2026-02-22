@@ -10,12 +10,27 @@ const { userQueries, aktuellesQueries, einsaetzeQueries, fahrzeugeQueries } = re
 const app = express();
 const PORT = 3000;
 
+// ========== AUTO-SETUP: Verzeichnisse erstellen wenn nicht vorhanden ==========
+const requiredDirs = [
+  './data',
+  './images',
+  './images/uploads'
+];
+
+console.log('🔍 Prüfe erforderliche Verzeichnisse...');
+requiredDirs.forEach(dir => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+    console.log(`✓ Verzeichnis erstellt: ${dir}`);
+  }
+});
+console.log('✓ Alle Verzeichnisse vorhanden\n');
+
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('.'));
 
-// Session-Konfiguration
+// Session-Konfiguration (MUSS vor den API-Routes kommen)
 app.use(session({
   secret: 'feuerwehr-walddorfhaeslach-secret-2024',
   resave: false,
@@ -425,6 +440,9 @@ app.delete('/api/fahrzeuge/:id', isAuthenticated, (req, res) => {
     res.status(500).json({ error: 'Serverfehler beim Löschen' });
   }
 });
+
+// ========== STATIC FILES (MUSS NACH allen API-Routes kommen!) ==========
+app.use(express.static('.'));
 
 // ========== SERVER START ==========
 

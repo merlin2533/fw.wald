@@ -19,23 +19,66 @@ Ein einfaches Backend-System zur Verwaltung der Website-Inhalte.
 
 ## 🔧 Installation
 
+### Automatische Installation (empfohlen)
+
+**Windows:**
+```bash
+setup.bat
+```
+
+**Linux/Mac:**
+```bash
+./setup.sh
+```
+
+Das Setup-Script:
+- Prüft ob Node.js installiert ist
+- Installiert alle Abhängigkeiten
+- Erstellt benötigte Verzeichnisse
+- Richtet die Datenbank ein
+
+### Manuelle Installation
+
 1. **Abhängigkeiten installieren:**
    ```bash
    npm install
    ```
 
-2. **Server starten:**
+2. **Verzeichnisse erstellen:**
    ```bash
-   npm start
+   mkdir data
+   mkdir images/uploads
    ```
 
-   Oder für Entwicklung mit Auto-Reload:
-   ```bash
-   npm run dev
-   ```
+## 🚀 Server starten
 
-3. **Admin-Panel öffnen:**
-   - Browser öffnen: `http://localhost:3000/admin.html`
+### Mit Start-Script (empfohlen)
+
+**Windows:**
+```bash
+start.bat
+```
+
+**Linux/Mac:**
+```bash
+./start.sh
+```
+
+### Manuell
+
+**Produktion:**
+```bash
+npm start
+```
+
+**Entwicklung mit Auto-Reload:**
+```bash
+npm run dev
+```
+
+### Admin-Panel öffnen
+
+Browser öffnen: `http://localhost:3000/admin.html`
 
 ## 🔐 Login-Daten
 
