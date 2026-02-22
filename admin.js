@@ -143,6 +143,12 @@ function setupForms() {
     await uploadMedia();
   });
 
+  // Media Replace Form
+  document.getElementById('mediaReplaceForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await replaceMedia();
+  });
+
   // Image Previews
   document.getElementById('aktuelles-image').addEventListener('change', (e) => {
     previewImage(e.target, 'aktuelles-preview');
@@ -159,6 +165,11 @@ function setupForms() {
   // Media Files Preview
   document.getElementById('media-files').addEventListener('change', (e) => {
     previewMultipleImages(e.target, 'uploadPreview');
+  });
+
+  // Replace Image Preview
+  document.getElementById('replace-image').addEventListener('change', (e) => {
+    previewImage(e.target, 'replacePreview');
   });
 }
 
@@ -628,8 +639,8 @@ async function loadMedia() {
           <div style="font-size: 11px; color: #666; margin-bottom: 8px;">
             ${formatFileSize(file.size)}
           </div>
-          <button class="btn btn-danger" onclick="deleteMedia('${file.path}')" style="width: 100%; padding: 6px; font-size: 12px;">
-            🗑️ Löschen
+          <button class="btn btn-primary" onclick='openMediaReplaceModal("${file.path}", "${file.name}")' style="width: 100%; padding: 6px; font-size: 12px;">
+            🔄 Ersetzen
           </button>
         </div>
       </div>
@@ -690,27 +701,54 @@ async function uploadMedia() {
   }
 }
 
-async function deleteMedia(path) {
-  if (!confirm('Möchten Sie dieses Bild wirklich löschen?\n\n' + path)) return;
+function openMediaReplaceModal(filePath, fileName) {
+  document.getElementById('replace-file-path').value = filePath;
+  document.getElementById('currentImagePreview').innerHTML = `
+    <div style="max-width: 300px;">
+      <img src="/${filePath}" alt="${fileName}" style="width: 100%; border-radius: 6px; border: 1px solid var(--border);">
+      <p style="font-size: 13px; color: #666; margin-top: 8px; text-align: center;">${fileName}</p>
+    </div>
+  `;
+  document.getElementById('replace-image').value = '';
+  document.getElementById('replacePreview').innerHTML = '';
+  document.getElementById('mediaReplaceModal').classList.add('active');
+}
+
+function closeMediaReplaceModal() {
+  document.getElementById('mediaReplaceModal').classList.remove('active');
+}
+
+async function replaceMedia() {
+  const filePath = document.getElementById('replace-file-path').value;
+  const imageFile = document.getElementById('replace-image').files[0];
+
+  if (!imageFile) {
+    showAlert('medienAlert', 'Bitte wählen Sie ein Bild aus', 'warning');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('path', filePath);
+  formData.append('image', imageFile);
 
   try {
-    const response = await fetch('/api/media.php?action=delete', {
+    const response = await fetch('/api/media.php?action=replace', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path: path })
+      body: formData
     });
 
     const data = await response.json();
 
     if (data.success) {
-      showAlert('medienAlert', 'Bild erfolgreich gelöscht!', 'success');
+      showAlert('medienAlert', '✅ Bild erfolgreich ersetzt!', 'success');
+      closeMediaReplaceModal();
       loadMedia();
     } else {
-      showAlert('medienAlert', data.error || 'Fehler beim Löschen', 'danger');
+      showAlert('medienAlert', data.error || 'Fehler beim Ersetzen', 'danger');
     }
   } catch (error) {
-    console.error('Delete media error:', error);
-    showAlert('medienAlert', 'Fehler beim Löschen', 'danger');
+    console.error('Replace media error:', error);
+    showAlert('medienAlert', 'Fehler beim Ersetzen', 'danger');
   }
 }
 

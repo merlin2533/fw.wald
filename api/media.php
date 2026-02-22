@@ -170,13 +170,12 @@ if ($action === 'upload') {
     }
 }
 
-// Delete file
-if ($action === 'delete') {
+// Replace file
+if ($action === 'replace') {
     requireAuth();
 
     try {
-        $input = json_decode(file_get_contents('php://input'), true);
-        $path = $input['path'] ?? '';
+        $path = $_POST['path'] ?? '';
 
         if (empty($path)) {
             jsonResponse(['error' => 'Kein Pfad angegeben'], 400);
@@ -187,7 +186,7 @@ if ($action === 'delete') {
             jsonResponse(['error' => 'Ungültiger Pfad'], 400);
         }
 
-        // Only allow deletion in specific directories
+        // Only allow replacement in specific directories
         $allowedPrefixes = ['images/', 'images/news/', 'images/fahrzeuge/', 'images/uploads/'];
         $isAllowed = false;
         foreach ($allowedPrefixes as $prefix) {
@@ -198,7 +197,7 @@ if ($action === 'delete') {
         }
 
         if (!$isAllowed) {
-            jsonResponse(['error' => 'Löschen in diesem Verzeichnis nicht erlaubt'], 403);
+            jsonResponse(['error' => 'Ersetzen in diesem Verzeichnis nicht erlaubt'], 403);
         }
 
         $fullPath = __DIR__ . '/../' . $path;
@@ -207,14 +206,37 @@ if ($action === 'delete') {
             jsonResponse(['error' => 'Datei nicht gefunden'], 404);
         }
 
-        if (!is_file($fullPath)) {
-            jsonResponse(['error' => 'Keine Datei'], 400);
+        if (!isset($_FILES['image'])) {
+            jsonResponse(['error' => 'Keine Datei hochgeladen'], 400);
         }
 
-        if (unlink($fullPath)) {
-            jsonResponse(['success' => true, 'message' => 'Datei gelöscht']);
+        $file = $_FILES['image'];
+
+        // Check for upload errors
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            jsonResponse(['error' => 'Upload-Fehler'], 400);
+        }
+
+        // Validate file type
+        $allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+        if (!in_array($file['type'], $allowedTypes)) {
+            jsonResponse(['error' => 'Nur Bilder erlaubt (JPEG, PNG, GIF, WebP)'], 400);
+        }
+
+        // Validate file size (max 5MB)
+        if ($file['size'] > 5 * 1024 * 1024) {
+            jsonResponse(['error' => 'Datei zu groß (max. 5MB)'], 400);
+        }
+
+        // Delete old file and upload new one
+        if (file_exists($fullPath)) {
+            unlink($fullPath);
+        }
+
+        if (move_uploaded_file($file['tmp_name'], $fullPath)) {
+            jsonResponse(['success' => true, 'message' => 'Bild erfolgreich ersetzt']);
         } else {
-            jsonResponse(['error' => 'Fehler beim Löschen'], 500);
+            jsonResponse(['error' => 'Fehler beim Speichern'], 500);
         }
 
     } catch (Exception $e) {
