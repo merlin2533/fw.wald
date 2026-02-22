@@ -602,6 +602,14 @@
             <button class="btn btn-primary" onclick="openEinsatzModal()">+ Neuer Einsatz</button>
           </div>
           <div id="einsaetzeAlert"></div>
+
+          <div style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+            <label for="einsatzYearFilter" style="margin: 0; font-weight: 500;">Jahr:</label>
+            <select id="einsatzYearFilter" onchange="loadEinsaetze()" style="padding: 8px; border: 1px solid var(--border); border-radius: 6px; min-width: 120px;">
+              <option value="">Alle Jahre</option>
+            </select>
+          </div>
+
           <div id="einsaetzeList" class="item-list"></div>
         </div>
       </div>

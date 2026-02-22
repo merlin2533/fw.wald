@@ -258,10 +258,20 @@ async function loadAktuelles() {
 
 async function loadEinsaetze() {
   try {
-    const response = await fetch('/api/einsaetze');
+    // Build URL with optional year filter
+    let url = '/api/einsaetze';
+    const yearFilter = document.getElementById('einsatzYearFilter')?.value;
+    if (yearFilter) {
+      url += `?year=${yearFilter}`;
+    }
+
+    const response = await fetch(url);
     const data = await response.json();
 
     const container = document.getElementById('einsaetzeList');
+
+    // Populate year filter if not already done
+    populateYearFilter(data);
 
     if (data.length === 0) {
       container.innerHTML = '<p style="color: #666; text-align: center; padding: 40px;">Keine Einsätze vorhanden</p>';
@@ -288,6 +298,29 @@ async function loadEinsaetze() {
   } catch (error) {
     console.error('Load einsätze error:', error);
   }
+}
+
+function populateYearFilter(einsaetze) {
+  const yearFilter = document.getElementById('einsatzYearFilter');
+  if (!yearFilter || yearFilter.options.length > 1) return; // Already populated
+
+  // Extract unique years from einsätze
+  const years = new Set();
+  einsaetze.forEach(einsatz => {
+    const year = new Date(einsatz.date).getFullYear();
+    years.add(year);
+  });
+
+  // Sort years descending
+  const sortedYears = Array.from(years).sort((a, b) => b - a);
+
+  // Add year options
+  sortedYears.forEach(year => {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = year;
+    yearFilter.appendChild(option);
+  });
 }
 
 async function loadFahrzeuge() {
