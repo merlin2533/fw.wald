@@ -193,9 +193,6 @@ function generateYearTabs(byYear) {
   tabsContainer.innerHTML = years.map((year, index) => `
     <button class="tab ${index === 0 ? 'tab--active' : ''}" role="tab" aria-selected="${index === 0}" data-tab="${year}">${year}</button>
   `).join('');
-
-  // Füge Event-Listener zu den Tabs hinzu
-  initTabListeners();
 }
 
 // Initialisiere Tab-Event-Listener
@@ -292,6 +289,9 @@ async function loadEinsaetze() {
     // Generiere Tabs und Contents dynamisch
     generateYearTabs(byYear);
     generateTabContents(byYear);
+
+    // Initialisiere Event-Listener NACH Erstellung der Tab-Contents
+    initTabListeners();
 
     // Animationen auslösen für aktiven Tab
     setTimeout(() => {
