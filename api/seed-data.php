@@ -46,6 +46,7 @@ try {
     echo "\n🚨 Füge Einsätze hinzu...\n";
 
     $einsaetzeData = [
+        // 2026
         [
             'title' => 'Verkehrsunfall B27 - Fahrzeugbergung',
             'date' => '2026-02-12 14:30:00',
@@ -69,7 +70,7 @@ try {
         [
             'title' => 'Brandmeldeanlage Gewerbegebiet - Fehlalarm',
             'date' => '2026-02-03 10:45:00',
-            'category' => 'Sonstiges',
+            'category' => 'Fehlalarm',
             'description' => '<p>Auslösung einer Brandmeldeanlage im Gewerbegebiet - Fehlalarm.</p><p>Die automatische Brandmeldeanlage eines Betriebs im Gewerbegebiet löste aus. Nach Erkundung vor Ort konnte Entwarnung gegeben werden. Es handelte sich um einen technischen Fehlalarm.</p>',
             'image' => null,
             'location' => 'Gewerbegebiet, Walddorfhäslach',
@@ -82,7 +83,119 @@ try {
             'category' => 'Technische Hilfeleistung',
             'description' => '<p>Beseitigung eines sturmgefällten Baumes auf der Fahrbahn.</p><p>Aufgrund starker Windböen stürzte ein Baum auf die Fahrbahn und blockierte diese vollständig. Die Feuerwehr rückte mit Kettensägen aus und beseitigte den Baum. Die Straße konnte nach kurzer Zeit wieder freigegeben werden.</p>',
             'image' => null,
-            'location' => 'Waldstraße, Walddorfhäslach',
+            'location' => 'K6900, Walddorf',
+            'vehicles' => 'HLF 16/12, GW-T 2',
+            'personnel' => '10'
+        ],
+        [
+            'title' => 'Flächenbrand Feldweg Richtung Rübgarten',
+            'date' => '2026-01-21 15:45:00',
+            'category' => 'Brandeinsatz',
+            'description' => '<p>Brand einer Grünfläche am Feldweg Richtung Rübgarten.</p><p>Durch einen Flächenbrand geriet eine größere Grünfläche in Brand. Die Feuerwehr konnte das Feuer unter Kontrolle bringen und ein Übergreifen auf angrenzende Flächen verhindern. Die Nachlöscharbeiten dauerten mehrere Stunden.</p>',
+            'image' => null,
+            'location' => 'Feldweg, Walddorfhäslach',
+            'vehicles' => 'HLF 16/12, LF 20, GW-T 2',
+            'personnel' => '15'
+        ],
+        [
+            'title' => 'Ölspur Ortsdurchfahrt Walddorf',
+            'date' => '2026-01-15 11:20:00',
+            'category' => 'Sonstiges',
+            'description' => '<p>Beseitigung einer Ölspur in der Ortsdurchfahrt Walddorf.</p><p>Nach einem technischen Defekt an einem Fahrzeug verteilte sich Öl auf der Fahrbahn. Die Feuerwehr streute die Ölspur ab und reinigte die Fahrbahn. Die Straße konnte nach kurzer Zeit wieder freigegeben werden.</p>',
+            'image' => null,
+            'location' => 'Ortsdurchfahrt, Walddorf',
+            'vehicles' => 'HLF 16/12',
+            'personnel' => '6'
+        ],
+        // 2025
+        [
+            'title' => 'Dachstuhlbrand Einfamilienhaus Gartenstraße',
+            'date' => '2025-11-18 03:15:00',
+            'category' => 'Brandeinsatz',
+            'description' => '<p>Vollbrand eines Dachstuhls in der Gartenstraße.</p><p>In den frühen Morgenstunden wurde die Feuerwehr zu einem Dachstuhlbrand alarmiert. Beim Eintreffen stand der Dachstuhl bereits in Vollbrand. Unter Atemschutz konnte das Feuer gelöscht werden. Die Bewohner konnten sich rechtzeitig in Sicherheit bringen.</p>',
+            'image' => null,
+            'location' => 'Gartenstraße, Häslach',
+            'vehicles' => 'HLF 16/12, LF 20, ELW 1, GW-T 2',
+            'personnel' => '22'
+        ],
+        [
+            'title' => 'Eingeklemmte Person nach Verkehrsunfall L382',
+            'date' => '2025-10-02 17:30:00',
+            'category' => 'Technische Hilfeleistung',
+            'description' => '<p>Rettung einer eingeklemmten Person nach schwerem Verkehrsunfall.</p><p>Nach einem Frontalzusammenstoß auf der L382 musste eine eingeklemmte Person aus ihrem Fahrzeug befreit werden. Mit hydraulischem Rettungsgerät konnte die Person schonend gerettet und dem Rettungsdienst übergeben werden.</p>',
+            'image' => null,
+            'location' => 'L382, Walddorfhäslach',
+            'vehicles' => 'HLF 16/12, GW-T 2, ELW 1',
+            'personnel' => '16'
+        ],
+        [
+            'title' => 'Containerbrand Industriegebiet',
+            'date' => '2025-08-15 22:10:00',
+            'category' => 'Brandeinsatz',
+            'description' => '<p>Brand eines Müllcontainers im Industriegebiet.</p><p>Ein Müllcontainer geriet aus ungeklärter Ursache in Brand. Die Feuerwehr konnte den Brand schnell löschen und ein Übergreifen auf nahestehende Gebäude verhindern.</p>',
+            'image' => null,
+            'location' => 'Industriegebiet, Walddorf',
+            'vehicles' => 'HLF 16/12, LF 20',
+            'personnel' => '10'
+        ],
+        [
+            'title' => 'Hochwassereinsatz nach Starkregen',
+            'date' => '2025-06-22 19:45:00',
+            'category' => 'Technische Hilfeleistung',
+            'description' => '<p>Mehrere überflutete Keller und Straßen nach Starkregen.</p><p>Nach heftigem Starkregen wurden mehrere Keller überflutet. Die Feuerwehr pumpte die Keller aus und sicherte betroffene Bereiche ab. Der Einsatz dauerte bis in die frühen Morgenstunden.</p>',
+            'image' => null,
+            'location' => 'Gemeindegebiet Walddorfhäslach',
+            'vehicles' => 'HLF 16/12, LF 20, GW-T 2',
+            'personnel' => '18'
+        ],
+        [
+            'title' => 'Rauchmelder-Alarm Mehrfamilienhaus Schulstraße',
+            'date' => '2025-04-09 14:20:00',
+            'category' => 'Fehlalarm',
+            'description' => '<p>Fehlalarm durch Rauchmelder in einem Mehrfamilienhaus.</p><p>Ein Rauchmelder löste in einer Wohnung aus. Nach Kontrolle der Wohnung konnte Entwarnung gegeben werden. Es handelte sich um einen Fehlalarm durch Wasserdampf.</p>',
+            'image' => null,
+            'location' => 'Schulstraße, Häslach',
+            'vehicles' => 'HLF 16/12',
+            'personnel' => '6'
+        ],
+        [
+            'title' => 'Türöffnung - Notfall in Wohnung',
+            'date' => '2025-02-14 10:30:00',
+            'category' => 'Technische Hilfeleistung',
+            'description' => '<p>Notfalltüröffnung für den Rettungsdienst.</p><p>Für den Rettungsdienst wurde eine verschlossene Wohnungstür geöffnet, um zu einer hilfsbedürftigen Person zu gelangen. Die Person konnte dem Rettungsdienst übergeben werden.</p>',
+            'image' => null,
+            'location' => 'Walddorfer Straße, Walddorf',
+            'vehicles' => 'HLF 16/12',
+            'personnel' => '4'
+        ],
+        // 2024
+        [
+            'title' => 'Scheunenbrand Außenbereich Häslach',
+            'date' => '2024-09-27 20:15:00',
+            'category' => 'Brandeinsatz',
+            'description' => '<p>Vollbrand einer Scheune im Außenbereich von Häslach.</p><p>Eine landwirtschaftlich genutzte Scheune stand in Vollbrand. Aufgrund der abgelegenen Lage musste eine Löschwasserversorgung über lange Wegstrecken aufgebaut werden. Der Brand konnte gelöscht werden, die Scheune wurde jedoch vollständig zerstört.</p>',
+            'image' => null,
+            'location' => 'Außenbereich, Häslach',
+            'vehicles' => 'HLF 16/12, LF 20, GW-T 2, ELW 1',
+            'personnel' => '20'
+        ],
+        [
+            'title' => 'Überfluteter Keller nach Unwetter',
+            'date' => '2024-07-14 16:30:00',
+            'category' => 'Technische Hilfeleistung',
+            'description' => '<p>Auspumpen eines überfluteten Kellers nach Unwetter.</p><p>Nach einem schweren Unwetter drang Wasser in einen Keller ein. Die Feuerwehr pumpte das Wasser ab und half bei der Schadensbegrenzung.</p>',
+            'image' => null,
+            'location' => 'Ringstraße, Walddorf',
+            'vehicles' => 'HLF 16/12, GW-T 2',
+            'personnel' => '8'
+        ],
+        [
+            'title' => 'PKW-Bergung aus Graben',
+            'date' => '2024-03-03 08:45:00',
+            'category' => 'Technische Hilfeleistung',
+            'description' => '<p>Bergung eines PKW, der von der Fahrbahn abgekommen war.</p><p>Ein PKW war von der Fahrbahn abgekommen und in einem Graben gelandet. Die Feuerwehr sicherte das Fahrzeug und barg es mit Hilfe des Gerätewagens. Der Fahrer blieb unverletzt.</p>',
+            'image' => null,
+            'location' => 'K6901, Walddorfhäslach',
             'vehicles' => 'HLF 16/12, GW-T 2',
             'personnel' => '10'
         ]
@@ -197,7 +310,7 @@ try {
     echo "\n✅ Daten-Import erfolgreich abgeschlossen!\n\n";
     echo "Übersicht:\n";
     echo "  - " . count($aktuellesData) . " Aktuelles-Einträge\n";
-    echo "  - " . count($einsaetzeData) . " Einsätze\n";
+    echo "  - " . count($einsaetzeData) . " Einsätze (2024-2026)\n";
     echo "  - " . count($fahrzeugeData) . " Fahrzeuge\n\n";
 
     echo "🔓 Login-Daten:\n";
