@@ -48,11 +48,192 @@ function createOperationHTML(einsatz) {
   `;
 }
 
+// Berechne Statistiken
+function calculateStats(einsaetze) {
+  const byYear = {};
+  const byCategory = {};
+
+  einsaetze.forEach(einsatz => {
+    const year = new Date(einsatz.date).getFullYear();
+    const category = einsatz.category;
+
+    // Nach Jahr gruppieren
+    if (!byYear[year]) {
+      byYear[year] = [];
+    }
+    byYear[year].push(einsatz);
+
+    // Nach Kategorie gruppieren
+    if (!byCategory[category]) {
+      byCategory[category] = 0;
+    }
+    byCategory[category]++;
+  });
+
+  return { byYear, byCategory };
+}
+
+// Aktualisiere die Statistik-Anzeige
+function updateStats(einsaetze) {
+  if (einsaetze.length === 0) return;
+
+  const { byYear, byCategory } = calculateStats(einsaetze);
+
+  // Finde das neueste Jahr mit Daten
+  const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+  const currentYear = years[0];
+  const currentYearCount = byYear[currentYear].length;
+
+  // Berechne Kategorien für aktuelles Jahr
+  const currentYearEinsaetze = byYear[currentYear];
+  const currentYearCategories = {};
+  currentYearEinsaetze.forEach(e => {
+    const cat = e.category;
+    if (!currentYearCategories[cat]) {
+      currentYearCategories[cat] = 0;
+    }
+    currentYearCategories[cat]++;
+  });
+
+  // Geschätzte Einsatzstunden (Durchschnitt 2.5h pro Einsatz)
+  const estimatedHours = Math.round(currentYearCount * 2.5);
+
+  // Aktualisiere Top-Statistik
+  const statsContainer = document.querySelector('.stats');
+  if (statsContainer) {
+    statsContainer.innerHTML = `
+      <div class="stat animate-in">
+        <div class="stat__number">${currentYearCount}</div>
+        <div class="stat__label">Einsätze ${currentYear}</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat__number">${currentYearCategories['Brandeinsatz'] || 0}</div>
+        <div class="stat__label">Brandeinsätze</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat__number">${currentYearCategories['Technische Hilfeleistung'] || 0}</div>
+        <div class="stat__label">Technische Hilfe</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat__number">${estimatedHours}</div>
+        <div class="stat__label">Einsatzstunden (geschätzt)</div>
+      </div>
+    `;
+  }
+
+  // Aktualisiere "Einsätze nach Typ" Chart
+  updateCategoryChart(byCategory);
+
+  // Aktualisiere "Jahresübersicht" Chart
+  updateYearChart(byYear);
+}
+
+// Aktualisiere Kategorie-Chart
+function updateCategoryChart(byCategory) {
+  const chartContainer = document.querySelector('.stats-chart');
+  if (!chartContainer) return;
+
+  const total = Object.values(byCategory).reduce((sum, count) => sum + count, 0);
+
+  const categories = [
+    { name: 'Brandeinsatz', color: 'linear-gradient(90deg, #C8102E, #E6395A)', count: byCategory['Brandeinsatz'] || 0 },
+    { name: 'Techn. Hilfeleistung', color: 'linear-gradient(90deg, #F5A623, #F7C15E)', count: byCategory['Technische Hilfeleistung'] || 0 },
+    { name: 'Fehlalarm', color: 'linear-gradient(90deg, #6B7280, #9CA3AF)', count: byCategory['Fehlalarm'] || 0 },
+    { name: 'Sonstige', color: 'linear-gradient(90deg, #3B82F6, #60A5FA)', count: byCategory['Sonstiges'] || 0 }
+  ];
+
+  const maxCount = Math.max(...categories.map(c => c.count), 1);
+
+  chartContainer.innerHTML = `
+    <h3 style="font-size: 1.125rem; margin-bottom: var(--space-xl);">Einsätze nach Typ</h3>
+    ${categories.map(cat => `
+      <div class="stats-bar">
+        <div class="stats-bar__label">${cat.name}</div>
+        <div class="stats-bar__track">
+          <div class="stats-bar__fill" style="width: ${(cat.count / maxCount * 100)}%; background: ${cat.color};">${cat.count}</div>
+        </div>
+      </div>
+    `).join('')}
+  `;
+}
+
+// Aktualisiere Jahresübersicht-Chart
+function updateYearChart(byYear) {
+  const chartContainers = document.querySelectorAll('.stats-chart');
+  if (chartContainers.length < 2) return;
+
+  const yearChartContainer = chartContainers[1];
+
+  // Sortiere Jahre absteigend
+  const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+  const maxCount = Math.max(...years.map(year => byYear[year].length), 1);
+
+  yearChartContainer.innerHTML = `
+    <h3 style="font-size: 1.125rem; margin-bottom: var(--space-xl);">Jahresübersicht</h3>
+    ${years.map(year => `
+      <div class="stats-bar">
+        <div class="stats-bar__label">${year}</div>
+        <div class="stats-bar__track">
+          <div class="stats-bar__fill" style="width: ${(byYear[year].length / maxCount * 100)}%;">${byYear[year].length}</div>
+        </div>
+      </div>
+    `).join('')}
+  `;
+}
+
+// Generiere Jahr-Tabs dynamisch
+function generateYearTabs(byYear) {
+  const tabsContainer = document.querySelector('.tabs[role="tablist"]');
+  if (!tabsContainer) return;
+
+  // Sortiere Jahre absteigend
+  const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+  // Erstelle Tab-Buttons nur für Jahre mit Daten
+  tabsContainer.innerHTML = years.map((year, index) => `
+    <button class="tab ${index === 0 ? 'tab--active' : ''}" role="tab" aria-selected="${index === 0}" data-tab="${year}">${year}</button>
+  `).join('');
+}
+
+// Generiere Tab-Content-Container dynamisch
+function generateTabContents(byYear) {
+  // Finde den Container-Bereich
+  const section = document.querySelector('.section .container');
+  if (!section) return;
+
+  // Finde die Tabs
+  const tabsDiv = section.querySelector('.tabs');
+  if (!tabsDiv) return;
+
+  // Entferne alle existierenden Tab-Contents
+  const existingContents = section.querySelectorAll('.tab-content');
+  existingContents.forEach(content => content.remove());
+
+  // Sortiere Jahre absteigend
+  const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+  // Erstelle neue Tab-Contents nur für Jahre mit Daten
+  years.forEach((year, index) => {
+    const tabContent = document.createElement('div');
+    tabContent.className = `tab-content ${index === 0 ? 'tab-content--active' : ''}`;
+    tabContent.setAttribute('data-tab-content', year);
+
+    // Füge Einsätze hinzu
+    tabContent.innerHTML = byYear[year].map(einsatz => createOperationHTML(einsatz)).join('');
+
+    // Füge nach den Tabs ein
+    tabsDiv.parentNode.insertBefore(tabContent, tabsDiv.nextSibling);
+  });
+}
+
 // Lade alle Einsätze
 async function loadEinsaetze() {
   try {
     const response = await fetch('/api/einsaetze');
     const einsaetze = await response.json();
+
+    // Aktualisiere Statistiken
+    updateStats(einsaetze);
 
     // Gruppiere nach Jahr
     const byYear = {};
@@ -64,35 +245,22 @@ async function loadEinsaetze() {
       byYear[year].push(einsatz);
     });
 
-    // Füge Einsätze in die entsprechenden Tabs ein
-    Object.keys(byYear).forEach(year => {
-      const container = document.querySelector(`.tab-content[data-tab-content="${year}"]`);
-      if (container) {
-        // Leere Container
-        container.innerHTML = '';
-
-        // Füge Einsätze hinzu
-        byYear[year].forEach(einsatz => {
-          container.innerHTML += createOperationHTML(einsatz);
-        });
-
-        // Wenn keine Einsätze, zeige Hinweis
-        if (byYear[year].length === 0) {
-          container.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">Keine Einsätze in diesem Jahr</p>';
-        }
-      }
-    });
+    // Generiere Tabs und Contents dynamisch
+    generateYearTabs(byYear);
+    generateTabContents(byYear);
 
     // Animationen auslösen für aktiven Tab
-    const activeContent = document.querySelector('.tab-content--active');
-    if (activeContent) {
-      const animateItems = activeContent.querySelectorAll('.animate-in');
-      animateItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('animate-in--visible');
-        }, 300 + index * 100);
-      });
-    }
+    setTimeout(() => {
+      const activeContent = document.querySelector('.tab-content--active');
+      if (activeContent) {
+        const animateItems = activeContent.querySelectorAll('.animate-in');
+        animateItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add('animate-in--visible');
+          }, index * 100);
+        });
+      }
+    }, 100);
 
   } catch (error) {
     console.error('Fehler beim Laden der Einsätze:', error);
