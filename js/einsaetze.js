@@ -193,6 +193,50 @@ function generateYearTabs(byYear) {
   tabsContainer.innerHTML = years.map((year, index) => `
     <button class="tab ${index === 0 ? 'tab--active' : ''}" role="tab" aria-selected="${index === 0}" data-tab="${year}">${year}</button>
   `).join('');
+
+  // Füge Event-Listener zu den Tabs hinzu
+  initTabListeners();
+}
+
+// Initialisiere Tab-Event-Listener
+function initTabListeners() {
+  const tabs = document.querySelectorAll('.tab[data-tab]');
+  const tabContents = document.querySelectorAll('.tab-content[data-tab-content]');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      const targetYear = this.getAttribute('data-tab');
+
+      // Alle Tabs deaktivieren
+      tabs.forEach(function(t) {
+        t.classList.remove('tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+
+      // Alle Inhalte ausblenden
+      tabContents.forEach(function(content) {
+        content.classList.remove('tab-content--active');
+      });
+
+      // Ausgewählten Tab und Inhalt aktivieren
+      this.classList.add('tab--active');
+      this.setAttribute('aria-selected', 'true');
+
+      const targetContent = document.querySelector('.tab-content[data-tab-content="' + targetYear + '"]');
+      if (targetContent) {
+        targetContent.classList.add('tab-content--active');
+
+        // Animationen erneut auslösen
+        const animateItems = targetContent.querySelectorAll('.animate-in');
+        animateItems.forEach(function(item, index) {
+          item.classList.remove('animate-in--visible');
+          setTimeout(function() {
+            item.classList.add('animate-in--visible');
+          }, index * 100);
+        });
+      }
+    });
+  });
 }
 
 // Generiere Tab-Content-Container dynamisch
