@@ -159,3 +159,15 @@ function deleteFile($filePath) {
         unlink('.' . $filePath);
     }
 }
+
+// Erstelle fehlende Verzeichnisse für Bilder
+$imageDirs = [
+    __DIR__ . '/../images/news',
+    __DIR__ . '/../images/fahrzeuge'
+];
+
+foreach ($imageDirs as $dir) {
+    if (!file_exists($dir)) {
+        mkdir($dir, 0755, true);
+    }
+}
