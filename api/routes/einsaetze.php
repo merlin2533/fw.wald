@@ -20,6 +20,14 @@ function getEinsaetze() {
     }
 
     $einsaetze = $stmt->fetchAll();
+
+    // Stelle sicher, dass Bilder existieren (erstelle Placeholder wenn nötig)
+    foreach ($einsaetze as &$item) {
+        if ($item['image']) {
+            ensureImageExists($item['image']);
+        }
+    }
+
     jsonResponse($einsaetze);
 }
 

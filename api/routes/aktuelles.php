@@ -9,6 +9,13 @@ function getAktuelles() {
     $stmt = $db->query("SELECT * FROM aktuelles ORDER BY date DESC LIMIT 3");
     $aktuelles = $stmt->fetchAll();
 
+    // Stelle sicher, dass Bilder existieren (erstelle Placeholder wenn nötig)
+    foreach ($aktuelles as &$item) {
+        if ($item['image']) {
+            ensureImageExists($item['image']);
+        }
+    }
+
     jsonResponse($aktuelles);
 }
 

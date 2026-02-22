@@ -9,6 +9,13 @@ function getFahrzeuge() {
     $stmt = $db->query("SELECT * FROM fahrzeuge ORDER BY sort_order ASC, name ASC");
     $fahrzeuge = $stmt->fetchAll();
 
+    // Stelle sicher, dass Bilder existieren (erstelle Placeholder wenn nötig)
+    foreach ($fahrzeuge as &$item) {
+        if ($item['image']) {
+            ensureImageExists($item['image']);
+        }
+    }
+
     jsonResponse($fahrzeuge);
 }
 

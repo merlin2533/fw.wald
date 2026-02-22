@@ -171,3 +171,62 @@ foreach ($imageDirs as $dir) {
         mkdir($dir, 0755, true);
     }
 }
+
+/**
+ * Stellt sicher, dass ein Bild existiert - erstellt Placeholder wenn nötig
+ */
+function ensureImageExists($imagePath) {
+    if (!$imagePath) {
+        return null;
+    }
+
+    $fullPath = __DIR__ . '/..' . $imagePath;
+
+    // Bild existiert bereits
+    if (file_exists($fullPath)) {
+        return $imagePath;
+    }
+
+    // Erstelle Verzeichnis falls nötig
+    $dir = dirname($fullPath);
+    if (!file_exists($dir)) {
+        mkdir($dir, 0755, true);
+    }
+
+    // Erstelle Placeholder
+    $width = 800;
+    $height = 600;
+    $image = @imagecreatetruecolor($width, $height);
+
+    if (!$image) {
+        return $imagePath; // Fallback wenn GD nicht verfügbar
+    }
+
+    // Farbverlauf
+    for ($i = 0; $i < $height; $i++) {
+        $ratio = $i / $height;
+        $r = (int)(200 - (40 * $ratio));
+        $g = (int)(16 - (3 * $ratio));
+        $b = (int)(46 - (9 * $ratio));
+        $color = imagecolorallocate($image, $r, $g, $b);
+        imageline($image, 0, $i, $width, $i, $color);
+    }
+
+    $white = imagecolorallocate($image, 255, 255, 255);
+
+    // Titel aus Pfad extrahieren
+    $filename = basename($imagePath, '.jpg');
+    $title = ucfirst(str_replace(['-', '_'], ' ', $filename));
+
+    // Text
+    $centerY = (int)($height / 2);
+    imagestring($image, 5, 50, $centerY - 50, 'Feuerwehr Walddorfhaeslach', $white);
+    imagestring($image, 4, 50, $centerY - 10, $title, $white);
+    imagestring($image, 3, 50, $centerY + 30, 'Bild folgt in Kuerze', $white);
+
+    // Speichern
+    imagejpeg($image, $fullPath, 85);
+    imagedestroy($image);
+
+    return $imagePath;
+}
