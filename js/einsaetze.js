@@ -262,8 +262,8 @@ function generateTabContents(byYear) {
     // Füge Einsätze hinzu
     tabContent.innerHTML = byYear[year].map(einsatz => createOperationHTML(einsatz)).join('');
 
-    // Füge nach den Tabs ein
-    tabsDiv.parentNode.insertBefore(tabContent, tabsDiv.nextSibling);
+    // Füge am Ende des Containers ein (nicht vor nextSibling, da das die Reihenfolge umdreht)
+    container.appendChild(tabContent);
   });
 }
 
