@@ -282,10 +282,15 @@ async function loadEinsaetze() {
       <div class="item">
         ${item.image ? `<img src="${item.image}" class="item-image" alt="${item.title}">` : ''}
         <div class="item-content">
-          <div class="item-title">${item.title}</div>
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 5px;">
+            <div class="item-title">${item.title}</div>
+            <div style="font-size: 13px; color: #666; white-space: nowrap; margin-left: 15px;">
+              📅 ${formatDate(item.date)}
+            </div>
+          </div>
           <div class="item-meta">
             <span class="badge badge-primary">${item.category}</span>
-            ${formatDate(item.date)} ${item.location ? `• ${item.location}` : ''}
+            ${item.location ? item.location : ''}
           </div>
           <div>${stripHtml(item.description).substring(0, 150)}...</div>
           <div class="item-actions">
