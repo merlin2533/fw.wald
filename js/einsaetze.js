@@ -273,8 +273,11 @@ function generateTabContents(byYear) {
 // Lade alle Einsätze
 async function loadEinsaetze() {
   try {
+    console.log('🔄 Lade Einsätze...');
     const response = await fetch('/api/einsaetze');
+    console.log('📡 API Response Status:', response.status);
     const einsaetze = await response.json();
+    console.log('📊 Geladene Einsätze:', einsaetze.length, einsaetze);
 
     // Aktualisiere Statistiken
     updateStats(einsaetze);
