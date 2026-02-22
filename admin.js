@@ -8,6 +8,49 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeEditors();
 });
 
+// ========== INITIALIZATION ==========
+
+async function initializeData() {
+  if (!confirm('Möchten Sie die Initialdaten und Placeholder-Bilder erstellen?\n\nDies fügt Beispieldaten ein:\n- 3 Aktuelles-Einträge\n- 4 Einsätze\n- 5 Fahrzeuge\n\nVorhandene Daten bleiben erhalten.')) {
+    return;
+  }
+
+  const btn = event.target;
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Initialisiere...';
+
+  try {
+    // Schritt 1: Placeholder-Bilder erstellen
+    console.log('Erstelle Placeholder-Bilder...');
+    const placeholderResponse = await fetch('/api/init.php?step=placeholders');
+    const placeholderResult = await placeholderResponse.text();
+    console.log('Placeholders:', placeholderResult);
+
+    // Schritt 2: Seed-Daten einfügen
+    console.log('Füge Initialdaten ein...');
+    const seedResponse = await fetch('/api/init.php?step=seed');
+    const seedResult = await seedResponse.text();
+    console.log('Seed:', seedResult);
+
+    if (placeholderResponse.ok && seedResponse.ok) {
+      alert('✅ Initialisierung erfolgreich!\n\n' +
+            '- Placeholder-Bilder erstellt\n' +
+            '- Initialdaten eingefügt\n\n' +
+            'Die Seite wird neu geladen.');
+      location.reload();
+    } else {
+      throw new Error('Initialisierung fehlgeschlagen');
+    }
+  } catch (error) {
+    console.error('Initialization error:', error);
+    alert('❌ Fehler bei der Initialisierung:\n' + error.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = originalText;
+  }
+}
+
 // ========== AUTH ==========
 
 async function checkAuth() {
