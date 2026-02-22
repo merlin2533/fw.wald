@@ -137,6 +137,12 @@ function setupForms() {
     await saveFahrzeug();
   });
 
+  // Media Upload Form
+  document.getElementById('mediaUploadForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await uploadMedia();
+  });
+
   // Image Previews
   document.getElementById('aktuelles-image').addEventListener('change', (e) => {
     previewImage(e.target, 'aktuelles-preview');
@@ -148,6 +154,11 @@ function setupForms() {
 
   document.getElementById('fahrzeug-image').addEventListener('change', (e) => {
     previewImage(e.target, 'fahrzeug-preview');
+  });
+
+  // Media Files Preview
+  document.getElementById('media-files').addEventListener('change', (e) => {
+    previewMultipleImages(e.target, 'uploadPreview');
   });
 }
 
@@ -200,6 +211,7 @@ function loadAllData() {
   loadAktuelles();
   loadEinsaetze();
   loadFahrzeuge();
+  loadMedia();
 }
 
 async function loadAktuelles() {
@@ -589,6 +601,119 @@ async function deleteFahrzeug(id) {
   }
 }
 
+// ========== MEDIEN ==========
+
+async function loadMedia() {
+  try {
+    const directory = document.getElementById('mediaDirectory')?.value || 'images';
+    const response = await fetch(`/api/media.php?action=list&directory=${directory}`);
+    const data = await response.json();
+
+    const container = document.getElementById('mediaGrid');
+
+    if (!data.files || data.files.length === 0) {
+      container.innerHTML = '<p style="color: #666; text-align: center; padding: 40px; grid-column: 1/-1;">Keine Bilder vorhanden</p>';
+      return;
+    }
+
+    container.innerHTML = data.files.map(file => `
+      <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: white;">
+        <div style="aspect-ratio: 1; overflow: hidden; background: #f5f5f5;">
+          <img src="/${file.path}" alt="${file.name}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 10px;">
+          <div style="font-size: 12px; font-weight: 500; margin-bottom: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${file.name}">
+            ${file.name}
+          </div>
+          <div style="font-size: 11px; color: #666; margin-bottom: 8px;">
+            ${formatFileSize(file.size)}
+          </div>
+          <button class="btn btn-danger" onclick="deleteMedia('${file.path}')" style="width: 100%; padding: 6px; font-size: 12px;">
+            🗑️ Löschen
+          </button>
+        </div>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error('Load media error:', error);
+    showAlert('medienAlert', 'Fehler beim Laden der Medien', 'danger');
+  }
+}
+
+function openMediaUploadModal() {
+  document.getElementById('uploadPreview').innerHTML = '';
+  document.getElementById('media-files').value = '';
+  document.getElementById('mediaUploadModal').classList.add('active');
+}
+
+function closeMediaUploadModal() {
+  document.getElementById('mediaUploadModal').classList.remove('active');
+}
+
+async function uploadMedia() {
+  const directory = document.getElementById('media-directory-upload').value;
+  const files = document.getElementById('media-files').files;
+
+  if (!files || files.length === 0) {
+    showAlert('medienAlert', 'Bitte wählen Sie mindestens ein Bild aus', 'warning');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('directory', directory);
+
+  for (let i = 0; i < files.length; i++) {
+    formData.append('images[]', files[i]);
+  }
+
+  try {
+    const response = await fetch('/api/media.php?action=upload', {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      showAlert('medienAlert', `✅ ${data.uploaded} Bild(er) erfolgreich hochgeladen!`, 'success');
+      closeMediaUploadModal();
+
+      // Switch to the uploaded directory
+      document.getElementById('mediaDirectory').value = directory;
+      loadMedia();
+    } else {
+      showAlert('medienAlert', data.error || 'Fehler beim Hochladen', 'danger');
+    }
+  } catch (error) {
+    console.error('Upload media error:', error);
+    showAlert('medienAlert', 'Fehler beim Hochladen', 'danger');
+  }
+}
+
+async function deleteMedia(path) {
+  if (!confirm('Möchten Sie dieses Bild wirklich löschen?\n\n' + path)) return;
+
+  try {
+    const response = await fetch('/api/media.php?action=delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ path: path })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      showAlert('medienAlert', 'Bild erfolgreich gelöscht!', 'success');
+      loadMedia();
+    } else {
+      showAlert('medienAlert', data.error || 'Fehler beim Löschen', 'danger');
+    }
+  } catch (error) {
+    console.error('Delete media error:', error);
+    showAlert('medienAlert', 'Fehler beim Löschen', 'danger');
+  }
+}
+
 // ========== HELPERS ==========
 
 function showAlert(containerId, message, type) {
@@ -638,4 +763,30 @@ function stripHtml(html) {
   const tmp = document.createElement('DIV');
   tmp.innerHTML = html;
   return tmp.textContent || tmp.innerText || '';
+}
+
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function previewMultipleImages(input, previewId) {
+  const preview = document.getElementById(previewId);
+  preview.innerHTML = '';
+
+  if (input.files && input.files.length > 0) {
+    Array.from(input.files).forEach(file => {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'aspect-ratio: 1; overflow: hidden; border-radius: 6px; border: 1px solid var(--border);';
+        div.innerHTML = `<img src="${e.target.result}" alt="Preview" style="width: 100%; height: 100%; object-fit: cover;">`;
+        preview.appendChild(div);
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
 }

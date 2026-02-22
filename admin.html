@@ -579,6 +579,7 @@
         <button class="tab active" onclick="switchTab('aktuelles')">Aktuelles</button>
         <button class="tab" onclick="switchTab('einsaetze')">Einsätze</button>
         <button class="tab" onclick="switchTab('fahrzeuge')">Fahrzeuge</button>
+        <button class="tab" onclick="switchTab('medien')">Medien</button>
       </div>
 
       <!-- Aktuelles Tab -->
@@ -614,6 +615,29 @@
           </div>
           <div id="fahrzeugeAlert"></div>
           <div id="fahrzeugeList" class="item-list"></div>
+        </div>
+      </div>
+
+      <!-- Medien Tab -->
+      <div class="tab-content" id="medien-tab">
+        <div class="card">
+          <div class="card-header">
+            <h2>Medien verwalten</h2>
+            <button class="btn btn-primary" onclick="openMediaUploadModal()">📤 Bilder hochladen</button>
+          </div>
+          <div id="medienAlert"></div>
+
+          <div style="margin-bottom: 20px;">
+            <label for="mediaDirectory" style="margin-right: 10px;">Verzeichnis:</label>
+            <select id="mediaDirectory" onchange="loadMedia()" style="padding: 8px; border: 1px solid var(--border); border-radius: 6px;">
+              <option value="images">images/</option>
+              <option value="images/news">images/news/</option>
+              <option value="images/fahrzeuge">images/fahrzeuge/</option>
+              <option value="images/uploads">images/uploads/</option>
+            </select>
+          </div>
+
+          <div id="mediaGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;"></div>
         </div>
       </div>
     </div>
@@ -758,6 +782,37 @@
         <div style="display: flex; gap: 10px; justify-content: flex-end;">
           <button type="button" class="btn btn-outline" onclick="closeFahrzeugModal()">Abbrechen</button>
           <button type="submit" class="btn btn-primary">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Media Upload Modal -->
+  <div class="modal" id="mediaUploadModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Bilder hochladen</h2>
+        <button class="modal-close" onclick="closeMediaUploadModal()">&times;</button>
+      </div>
+      <form id="mediaUploadForm">
+        <div class="form-group">
+          <label for="media-directory-upload">Zielverzeichnis *</label>
+          <select id="media-directory-upload" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px;">
+            <option value="images">images/</option>
+            <option value="images/news">images/news/</option>
+            <option value="images/fahrzeuge">images/fahrzeuge/</option>
+            <option value="images/uploads">images/uploads/</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="media-files">Bilder auswählen *</label>
+          <input type="file" id="media-files" accept="image/*" multiple required style="width: 100%; padding: 10px; border: 2px dashed var(--border); border-radius: 6px;">
+          <p style="font-size: 13px; color: #666; margin-top: 5px;">Sie können mehrere Bilder gleichzeitig auswählen (max. 5MB pro Bild)</p>
+        </div>
+        <div id="uploadPreview" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 15px;"></div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn btn-outline" onclick="closeMediaUploadModal()">Abbrechen</button>
+          <button type="submit" class="btn btn-primary">Hochladen</button>
         </div>
       </form>
     </div>
